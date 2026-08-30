@@ -5,5 +5,5 @@ public class Cliente {
 	private int id;
 	private int usuarioId;
 	private String direccion;
-	private List<Mascota> mascotas;
+	private List<Mascota> mascotas = new ArrayList<>();
 }
