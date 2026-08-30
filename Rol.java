@@ -1,3 +1,4 @@
 public enum Rol{
-  VETERINARIO,ESTILISTA
+  VETERINARIO,
+  ESTILISTA
 }
