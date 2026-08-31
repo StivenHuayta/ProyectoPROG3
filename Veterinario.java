@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Veterinario {
+public class Empleado {
 	private int id;
 	private int usuarioId;
 	private boolean activo;
