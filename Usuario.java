@@ -1,9 +1,9 @@
-public class Usuario {
-	private int id;
-	private String dni;
-	private String nombres;
-	private String apellidos;
-	private String email;
-	private String passwordHash;
-	private String telefono;
+public abstract class Usuario {
+    protected int id;
+    protected String dni;
+    protected String nombres;
+    protected String apellidos;
+    protected String email;
+    protected String passwordHash;
+    protected String telefono;
 }
