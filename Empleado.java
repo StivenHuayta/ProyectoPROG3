@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Empleado {
+public class Empleado extends Cliente {
 	private String numeroColegiatura;
 	private boolean activo;
 	private List<RolEmpleado> roles;
