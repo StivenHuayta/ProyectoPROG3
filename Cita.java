@@ -1,8 +1,8 @@
 import java.time.LocalDateTime;
 
 public class Cita {
-	private int id;
-	private int sedeId;
+	private int idCita;
+	private Sede sede;
 	private Empleado empleado;
 	private Mascota mascota;
 	private Servicio servicio;
