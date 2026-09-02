@@ -1,4 +1,4 @@
-public enum Rol{
+public enum RolEmpleado{
   VETERINARIO,
   ESTILISTA
 }
