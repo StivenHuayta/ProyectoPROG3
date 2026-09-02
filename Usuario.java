@@ -1,4 +1,4 @@
-public abstract class Usuario {
+public class Usuario {
     protected int id;
     protected TipoRol rol;
     protected String dni;
