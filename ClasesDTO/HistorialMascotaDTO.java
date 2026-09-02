@@ -7,6 +7,7 @@ private class HistorialMascotaDTO{
 	private String edad;
 	private String nombreOwner;
 	private String telefonoOwner;
+	private String fechaRegistro;
 	private List<VisitaClinicaDTO> atencionesMedicas;
 	
 	
