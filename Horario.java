@@ -3,6 +3,7 @@ import java.time.LocalTime;
 
 public class Horario {
     private int id;
+    private int idEmpleado; 
     private DayOfWeek diaSemana;
     private LocalTime horaInicio;
     private LocalTime horaFin;
