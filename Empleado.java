@@ -5,7 +5,7 @@ public class Empleado{
     private String numeroColegiatura;
     private boolean activo;
     private List<RolEmpleado> roles;
-    //chau horario
+    
     private Sede sede;
 
     
