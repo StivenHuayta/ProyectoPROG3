@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 public class Mascota {
     private int id;
-    private int clienteId;
+    private Cliente cliente;
     private String nombre;
     private Especie especie;
     private LocalDate fechaNacimiento;
@@ -11,10 +11,10 @@ public class Mascota {
 
     public Mascota() {}
 
-    public Mascota(int id, int clienteId, String nombre, Especie especie, 
+    public Mascota(int id, Cliente cliente, String nombre, Especie especie, 
                    LocalDate fechaNacimiento, Sexo sexo,LocalDate fechaRegistro) {
         this.id = id;
-        this.clienteId = clienteId;
+        this.cliente = cliente;
         this.nombre = nombre;
         this.especie = especie;
         this.fechaNacimiento = fechaNacimiento;
