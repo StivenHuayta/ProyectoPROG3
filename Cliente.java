@@ -16,4 +16,8 @@ public class Cliente extends Usuario {
         this.direccion = direccion;
         this.mascotas = new ArrayList<>();
     }
+
+	public void registrarMascota(Mascota mascota) {
+		this.mascotas.add(mascota);
+	}
 }
