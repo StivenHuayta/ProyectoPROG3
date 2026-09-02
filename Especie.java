@@ -1,5 +1,7 @@
 public enum Especie {
-	PERRO,
-	GATO,
-	AVE
+	CANINO,
+    FELINO,
+    AVE,
+    ROEDOR,
+    EXOTICO
 }
