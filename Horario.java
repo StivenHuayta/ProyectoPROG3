@@ -13,9 +13,10 @@ public class Horario {
         this.activo = true;
     }
 
-    public Horario(int id, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin) {
+    public Horario(int id,int idEmpleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin) {
         this.id = id;
         this.diaSemana = diaSemana;
+        this.idEmpleado = idEmpleado; 
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
         this.activo = true;
