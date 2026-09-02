@@ -7,6 +7,4 @@ public class Mascota {
 	private Especie especie;
 	private LocalDate fechaNacimiento;
 	private Sexo sexo;
-	private double peso;
-	private LocalDate fechaRegistro;
 }
