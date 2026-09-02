@@ -7,11 +7,11 @@ public abstract class Usuario {
     protected String email;
     protected String passwordHash;
     protected String telefono;
-
+    protected boolean estado;
     protected Usuario() {};
     
     protected Usuario(int id, TipoRol rol,String dni, String nombres, String apellidos, 
-                   String email, String passwordHash, String telefono) {
+                   String email, String passwordHash, String telefono, boolean estado) {
         this.id = id;
         this.rol = rol;
         this.dni = dni;
@@ -20,5 +20,6 @@ public abstract class Usuario {
         this.email = email;
         this.passwordHash = passwordHash;
         this.telefono = telefono;
+        this.estado = estado;
     }
 }
