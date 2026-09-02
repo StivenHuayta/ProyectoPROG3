@@ -5,13 +5,13 @@ public class Empleado extends Cliente {
     private String numeroColegiatura;
     private boolean activo;
     private List<RolEmpleado> roles;
-    private List<Horario> horarios; // Turnos base semanales
+    //chau horario
 
     public Empleado() {
         super();
         this.activo = true;
         this.roles = new ArrayList<>();
-        this.horarios = new ArrayList<>();
+
     }
 
     public Empleado(int id, String dni, String nombres, String apellidos, 
@@ -21,7 +21,7 @@ public class Empleado extends Cliente {
         this.numeroColegiatura = numeroColegiatura;
         this.activo = true;
         this.roles = new ArrayList<>();
-        this.horarios = new ArrayList<>();
+
     }
 
     public void agregarRol(RolEmpleado rol) {
