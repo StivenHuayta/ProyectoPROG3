@@ -6,7 +6,7 @@ public class Empleado extends Cliente {
     private boolean activo;
     private List<RolEmpleado> roles;
     //chau horario
-    private int idSede;
+    private Sede sede;
 
     public Empleado() {
         super();
@@ -17,10 +17,10 @@ public class Empleado extends Cliente {
 
     public Empleado(int id, String dni, String nombres, String apellidos, 
                     String email, String passwordHash, String telefono, String direccion, 
-                    String numeroColegiatura,int idSede) {
+                    String numeroColegiatura,Sede sede) {
         super(id, dni, nombres, apellidos, email, passwordHash, telefono, direccion);
         this.numeroColegiatura = numeroColegiatura;
-        this.idSede = idSede;
+        this.sede = sede;
         this.activo = true;
         this.roles = new ArrayList<>();
 
