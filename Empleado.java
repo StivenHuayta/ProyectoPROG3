@@ -20,4 +20,14 @@ public class Empleado extends Cliente {
         this.activo = true;
         this.roles = new ArrayList<>();
     }
+
+	public void agregarRol(RolEmpleado rol) {
+	    if (!this.roles.contains(rol)) {
+	        this.roles.add(rol);
+	    }
+	}
+	
+	public boolean tieneRol(RolEmpleado rol) {
+	    return this.roles.contains(rol);
+	}
 }
