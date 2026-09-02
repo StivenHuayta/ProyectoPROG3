@@ -1,3 +1,4 @@
+import java.util.Date
 
 private class VisitaClinicaDTO{
 	private Date fechaAtencion;
