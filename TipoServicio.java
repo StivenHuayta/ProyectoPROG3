@@ -1,5 +1,4 @@
 public enum TipoServicio {
-    CORTE,
-    VACUNACION,
-    BANHO
+    MEDICO,
+    ESTETICO
 }
