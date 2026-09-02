@@ -6,4 +6,17 @@ public abstract class Usuario {
     protected String email;
     protected String passwordHash;
     protected String telefono;
+
+    protected Usuario() {};
+    
+    protected Usuario(int id, String dni, String nombres, String apellidos, 
+                   String email, String passwordHash, String telefono) {
+        this.id = id;
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.telefono = telefono;
+    }
 }
