@@ -1,5 +1,6 @@
 public abstract class Usuario {
     protected int id;
+    protected TipoRol rol;
     protected String dni;
     protected String nombres;
     protected String apellidos;
@@ -9,9 +10,10 @@ public abstract class Usuario {
 
     protected Usuario() {};
     
-    protected Usuario(int id, String dni, String nombres, String apellidos, 
+    protected Usuario(int id, TipoRol rol,String dni, String nombres, String apellidos, 
                    String email, String passwordHash, String telefono) {
         this.id = id;
+        this.rol = rol;
         this.dni = dni;
         this.nombres = nombres;
         this.apellidos = apellidos;
