@@ -9,4 +9,11 @@ public class Cliente extends Usuario {
 		super();
 		this.mascotas = new ArrayList<>();
 	}
+
+	public Cliente(int id, String dni, String nombres, String apellidos, 
+                   String email, String passwordHash, String telefono, String direccion) {
+        super(id, dni, nombres, apellidos, email, passwordHash, telefono);
+        this.direccion = direccion;
+        this.mascotas = new ArrayList<>();
+    }
 }
