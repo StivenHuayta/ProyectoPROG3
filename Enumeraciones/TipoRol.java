@@ -1,4 +1,4 @@
-public enum Sexo {
+public enum TipoRol {
 	ADMIN,
 	EMPLEADO,
   CLIENTE
