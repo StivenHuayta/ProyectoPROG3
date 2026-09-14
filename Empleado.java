@@ -47,15 +47,34 @@ public class Empleado{
     }
 
 
+public boolean esVeterinario() {
+        return this.rol == RolEmpleado.VETERINARIO;
+    }
+
+    public void darDeBaja() {
+        this.activo = false;
+    }
+
+    public void reincorporar() {
+        this.activo = true;
+    }
     
+    public void trasladarDeSede(Sede nuevaSede) {
+        if (nuevaSede == null) {
+            throw new IllegalArgumentException("La nueva sede no puede ser nula.");
+        }
+        this.sede = nuevaSede;
+    }
+
+
+
+
+    //----------------------------------------------------------------------
 
     public String getNumeroColegiatura() {
         return numeroColegiatura;
     }
 
-    public void setNumeroColegiatura(String numeroColegiatura) {
-        this.numeroColegiatura = numeroColegiatura;
-    }
 
     public boolean isActivo() {
         return activo;
@@ -69,16 +88,8 @@ public class Empleado{
         return roles;
     }
 
-    public void setRoles(List<RolEmpleado> roles) {
-        this.roles = roles;
-    }
-
     public Sede getSede() {
         return sede;
-    }
-
-    public void setSede(Sede sede) {
-        this.sede = sede;
     }
 
 }
