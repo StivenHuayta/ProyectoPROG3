@@ -71,6 +71,16 @@ public boolean esVeterinario() {
 
     //----------------------------------------------------------------------
 
+    public int getid(){
+        return id; 
+    
+    }
+
+  public Persona getDatosPersonales() { return datosPersonales; } 
+  public Usuario getCredenciales() { return credenciales; }
+    
+    
+    
     public String getNumeroColegiatura() {
         return numeroColegiatura;
     }
