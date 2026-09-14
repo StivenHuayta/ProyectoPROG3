@@ -80,10 +80,7 @@ public boolean esVeterinario() {
         return activo;
     }
 
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
-
+   
     public List<RolEmpleado> getRoles() {
         return roles;
     }
