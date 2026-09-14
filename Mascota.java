@@ -40,6 +40,24 @@ public Mascota(int id, Cliente cliente, String nombre, Especie especie, Sexo sex
     }
 
 
+
+public int calcularEdadEnAnios() {
+        if (this.fechaNacimiento == null) {
+            return 0;
+        }
+        return Period.between(this.fechaNacimiento, LocalDate.now()).getYears();
+    }
+
+    // Un método clínico especializado
+    public void actualizarPeso(double nuevoPeso) {
+        if (nuevoPeso <= 0) {
+            throw new IllegalArgumentException("El peso registrado debe ser mayor a 0.");
+        }
+        this.peso = nuevoPeso;
+    }
+
+
+    
     //-----------------------------------
     public int getId() {
         return id;
