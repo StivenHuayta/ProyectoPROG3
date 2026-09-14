@@ -10,13 +10,25 @@ public class Servicio {
 
     public Servicio() {}
 
-    public Servicio(int id, String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio, boolean activo) {
-        this.id = id;
-        this.nombre = nombre;
+    public Servicio(String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio) {
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre del servicio es obligatorio.");
+        }
+        if (duracionMinutos <= 0) {
+            throw new IllegalArgumentException("La duración del servicio debe ser mayor a 0 minutos.");
+        }
+        if (precioBase == null || precioBase.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("El precio base no puede ser nulo ni negativo.");
+        }
+        if (tipoServicio == null) {
+            throw new IllegalArgumentException("El tipo de servicio es obligatorio.");
+        }
+
+        this.nombre = nombre.trim();
         this.duracionMinutos = duracionMinutos;
         this.precioBase = precioBase;
         this.tipoServicio = tipoServicio;
-        this.activo = activo;
+        this.activo = true; // Por defecto nace activo para poder venderse
     }
 
     public int getId() {
