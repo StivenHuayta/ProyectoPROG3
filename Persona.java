@@ -1,4 +1,5 @@
 public class Persona{
+	private int id;
 	private String dni;
 	private String nombres;
 	private String apellidoP; 
@@ -6,13 +7,9 @@ public class Persona{
 	private String telefono; 
 	private String email; 
 
-	 public Persona(String dni, String nombres, String apellidoP, String apellidoM, String telefono, String email) {
-        this.dni = dni;
-        this.nombres = nombres;
-        this.apellidoP = apellidoP;
-        this.apellidoM = apellidoM;
-        this.telefono = telefono;
-        this.email = email;
+	 public Persona(int id, String dni, String nombres, String apellidoP, String apellidoM, String telefono, String email) {
+        this(dni, nombres , apellidoP, apellidoM, telefono, email); 
+		this.id = id; 
     }
 
 	public Persona(String dni, String nombres, String apellidoP, String apellidoM, String telefono, String email) {
@@ -57,6 +54,12 @@ public class Persona{
 
 	
  //-------------------------------------------// 
+
+	public int getid(){
+		return id; 
+	}
+
+
     public String getNombres() {
         return nombres;
     }
