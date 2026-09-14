@@ -46,7 +46,7 @@ public boolean cubreLaHora(LocalTime horaSolicitada) {
         return !horaSolicitada.isBefore(this.horaInicio) && horaSolicitada.isBefore(this.horaFin);
     }
 
-    // Calcula cuántas horas dura este turno (Útil para reportes del Administrador)
+    //  horas dura este turno 
     public long calcularHorasDeTurno() {
         return Duration.between(this.horaInicio, this.horaFin).toHours();
     }
