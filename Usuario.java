@@ -60,19 +60,19 @@ public void activarCuenta() {
         this.estado = estado;
     }
 
-    public String getPasswordHash() {
+    private String getPasswordHash() {
         return passwordHash;
     }
 
-    public void setPasswordHash(String passwordHash) {
+    private void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
 
-    public String getAccountname() {
+    private String getAccountname() {
         return Accountname;
     }
 
-    public void setAccountname(String accountname) {
+    private void setAccountname(String accountname) {
         Accountname = accountname;
     }
 
