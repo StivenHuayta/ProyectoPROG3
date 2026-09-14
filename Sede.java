@@ -1,57 +1,63 @@
 public class Sede{
-  private int idSede;
+  private int id;
   private String nombre;
   private String direccion;
   private String telefono;
   private boolean activo; 
 
-  public Sede(int idSede,String nombre,String direccion,String telefono,boolean activo){
-    this.idSede = idSede;
-    this.nombre = nombre;
-    this.direccion = direccion;
-    this.telefono = telefono;
-    this.activo = activo;
-  }
+
   
+  //REGISTRO DE NUEVA SEDE
+  public Sede(String nombre, String direccion, String telefono) {
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre de la sede es obligatorio.");
+        }
+        if (direccion == null || direccion.isBlank()) {
+            throw new IllegalArgumentException("La dirección de la sede es obligatoria.");
+        }
+        
+        this.nombre = nombre.trim();
+        this.direccion = direccion.trim();
+        this.telefono = telefono;
+        this.activo = true; 
+    }
 
-  public int getIdSede() {
-    return idSede;
-  }
+  //CONSTRUCTOR DESDE SQL
+  public Sede(int id, String nombre, String direccion, String telefono, boolean activo) {
+        this(nombre, direccion, telefono); /
+        this.id = id;
+        this.activo = activo; 
+    }
 
-  public void setIdSede(int idSede) {
-    this.idSede = idSede;
-  }
 
-  public String getNombre() {
-    return nombre;
-  }
+  public void desactivar() {
+        this.activo = false;
+    }
 
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
-  }
+    public void activar() {
+        this.activo = true;
+    }
+    
+   
+    public void actualizarDatosLogisticos(String nuevaDireccion, String nuevoTelefono) {
+        if (nuevaDireccion != null && !nuevaDireccion.isBlank()) {
+            this.direccion = nuevaDireccion.trim();
+        }
+        if (nuevoTelefono != null && !nuevoTelefono.isBlank()) {
+            this.telefono = nuevoTelefono.trim();
+        }
+    }
+  
+  
+  
+  
+  //------------------------------------------------------
 
-  public String getDireccion() {
-    return direccion;
-  }
-
-  public void setDireccion(String direccion) {
-    this.direccion = direccion;
-  }
-
-  public String getTelefono() {
-    return telefono;
-  }
-
-  public void setTelefono(String telefono) {
-    this.telefono = telefono;
-  }
-
-  public boolean isActivo() {
-    return activo;
-  }
-
-  public void setActivo(boolean activo) {
-    this.activo = activo;
-  }
+  
+    public int getId() { return id; }
+    public String getNombre() { return nombre; }
+    public String getDireccion() { return direccion; }
+    public String getTelefono() { return telefono; }
+    public boolean isActivo() { return activo; }
 
 }
