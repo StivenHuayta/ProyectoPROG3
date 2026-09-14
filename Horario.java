@@ -10,9 +10,7 @@ public class Horario {
     private LocalTime horaFin;
     private boolean activo;
 
-    public Horario() {
-        this.activo = true;
-    }
+    public Horario() { }
 
     public Horario(Empleado empleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin) {
         if (empleado == null) {
