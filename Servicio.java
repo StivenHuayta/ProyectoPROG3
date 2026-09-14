@@ -32,7 +32,7 @@ public class Servicio {
     }
 
 public Servicio(int id, String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio, boolean activo) {
-        this(nombre, duracionMinutos, precioBase, tipoServicio); // Reutiliza validaciones
+        this(nombre, duracionMinutos, precioBase, tipoServicio); 
         this.id = id;
         this.activo = activo;
     }
