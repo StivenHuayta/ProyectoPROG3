@@ -6,15 +6,30 @@ public class Usuario {
     protected boolean estado; 
    
     protected Usuario() {};
-    
-    protected Usuario(int id, TipoRol rol, String accountName, String passwordHash, boolean estado) {
-        this.id = id;
+
+    //PARA NUEVOS USUARIOS
+    public Usuario(TipoRol rol, String accountName, String passwordHash) {
+        if (rol == null || accountName == null || passwordHash == null || accountName.isBlank()) {
+            throw new IllegalArgumentException("Las credenciales base no pueden estar vacías");
+        }
         this.rol = rol;
         this.accountName = accountName;
         this.passwordHash = passwordHash;
-        this.estado = estado;
+        this.estado = true; 
     }
 
+    //PARA USUARIOS YA REGISTRADOS 
+    public Usuario(int id, TipoRol rol, String accountName, String passwordHash, boolean estado) {
+        this(rol, accountName, passwordHash); //  reusamos las validaciones
+        this.id = id;
+        this.estado = estado;
+    }
+    
+    public boolean tieneAccesoPermitido() {
+        return this.estado; // POR SI AGREGAMOS CONDICIONES EXTRA PARA TENER ACCESO
+    }
+
+    
 public void desactivarCuenta() {
         this.estado = false;
     }
