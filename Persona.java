@@ -16,7 +16,8 @@ public class Persona{
     }
 
 	public Persona(String dni, String nombres, String apellidoP, String apellidoM, String telefono, String email) {
-        // Validaciones de integridad (Escudo del dominio)
+        // Validaciones de datos VÁLIDOS
+		
         if (dni == null || dni.length() != 8) {
             throw new IllegalArgumentException("El DNI debe tener 8 caracteres");
         }
@@ -68,6 +69,8 @@ public class Persona{
         return dni;
     }
 
+	
+	
     public void setDni(String dni) {
         this.dni = dni;
     }
