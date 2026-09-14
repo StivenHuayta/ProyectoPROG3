@@ -64,17 +64,13 @@ public int calcularEdadEnAnios() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+ 
 
     public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+
 
     public String getNombre() {
         return nombre;
@@ -112,16 +108,9 @@ public int calcularEdadEnAnios() {
         return peso;
     }
 
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
 
     public LocalDate getFechaRegistro() {
         return fechaRegistro;
-    }
-
-    public void setFechaRegistro(LocalDate fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
     }
 
 }
