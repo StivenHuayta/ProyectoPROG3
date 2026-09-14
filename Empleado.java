@@ -20,14 +20,14 @@ public class Empleado{
             throw new IllegalArgumentException("Faltan datos obligatorios para registrar al empleado.");
         }
 
-        // --- regla de negocio -- 
+        // --regla de negocio --
         if (roles.contains(RolEmpleado.VETERINARIO)) {
             if (numeroColegiatura == null || numeroColegiatura.isBlank()) {
                 throw new IllegalArgumentException("Un veterinario requiere obligatoriamente un número de colegiatura.");
             }
             this.numeroColegiatura = numeroColegiatura.trim();
         } else {
-            // Si es ESTILISTA o RECEPCIONISTA.
+            // --Si es ESTILISTA o RECEPCIONISTA.--
             this.numeroColegiatura = null; 
         }
 
