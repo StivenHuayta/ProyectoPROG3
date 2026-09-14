@@ -2,7 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empleado{
+
+    private int id;
+    private Persona datosPersonales;
     private String numeroColegiatura;
+    private Usuario credenciales;
     private boolean activo;
     private List<RolEmpleado> roles;
     
@@ -11,12 +15,39 @@ public class Empleado{
     
     public Empleado() {}
 
-    public Empleado(String numeroColegiatura, boolean activo, List<RolEmpleado> roles, Sede sede) {
-        this.numeroColegiatura = numeroColegiatura;
-        this.activo = activo;
-        this.roles = roles;
+    public Empleado(Persona datosPersonales, Usuario credenciales, List<RolEmpleado> roles , String numeroColegiatura, Sede sede) {
+        if (datosPersonales == null || credenciales == null || sede == null || roles == null) {
+            throw new IllegalArgumentException("Faltan datos obligatorios para registrar al empleado.");
+        }
+
+        // --- regla de negocio -- 
+        if (roles.contains(RolEmpleado.VETERINARIO)) {
+            if (numeroColegiatura == null || numeroColegiatura.isBlank()) {
+                throw new IllegalArgumentException("Un veterinario requiere obligatoriamente un número de colegiatura.");
+            }
+            this.numeroColegiatura = numeroColegiatura.trim();
+        } else {
+            // Si es ESTILISTA o RECEPCIONISTA.
+            this.numeroColegiatura = null; 
+        }
+
+        this.datosPersonales = datosPersonales;
+        this.credenciales = credenciales;
+        this.rol = rol;
         this.sede = sede;
+        this.activo = true; 
     }
+
+    //CONSTRUCTOR DESDE DATOS DE SQL
+    
+    public Empleado(int id, Persona datosPersonales, Usuario credenciales, RolEmpleado rol, String numeroColegiatura, Sede sede, boolean activo) {
+        this(datosPersonales, credenciales, rol, numeroColegiatura, sede);
+        this.id = id;
+        this.activo = activo;
+    }
+
+
+    
 
     public String getNumeroColegiatura() {
         return numeroColegiatura;
