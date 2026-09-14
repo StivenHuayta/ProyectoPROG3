@@ -1,4 +1,4 @@
-public abstract class Persona{
+public class Persona{
 	private String dni;
 	private String nombres;
 	private String apellidoP; 
@@ -15,6 +15,47 @@ public abstract class Persona{
         this.email = email;
     }
 
+	public Persona(String dni, String nombres, String apellidoP, String apellidoM, String telefono, String email) {
+        // Validaciones de integridad (Escudo del dominio)
+        if (dni == null || dni.length() != 8) {
+            throw new IllegalArgumentException("El DNI debe tener 8 caracteres");
+        }
+        if (email == null || !email.contains("@")) {
+            throw new IllegalArgumentException("El formato del correo es inválido");
+        }
+        if (nombres == null || apellidoP == null || nombres.isBlank()) {
+            throw new IllegalArgumentException("Los nombres y el apellido paterno son obligatorios");
+        }
+
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidoP = apellidoP;
+        this.apellidoM = apellidoM;
+        this.telefono = telefono;
+        this.email = email;
+    }
+
+
+//------------------------------------
+
+
+	public String getNombreCompleto() {
+        return this.nombres + " " + this.apellidoP + " " + (this.apellidoM != null ? this.apellidoM : "").trim(); //VERIFICAMOS NOMBRE INCOMPLETO Y ELIMINAMOS ESPACIOS
+    }
+
+    public void actualizarContacto(String nuevoTelefono, String nuevoEmail) {
+        if (nuevoEmail != null && nuevoEmail.contains("@")) {
+            this.email = nuevoEmail;
+        }
+        if (nuevoTelefono != null && !nuevoTelefono.isBlank()) {
+            this.telefono = nuevoTelefono;
+        }
+    }
+	
+
+
+	
+ //-------------------------------------------// 
     public String getNombres() {
         return nombres;
     }
