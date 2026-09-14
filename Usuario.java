@@ -1,38 +1,21 @@
 public class Usuario {
     protected int id;
     protected TipoRol rol;
-    protected String dni;
-    protected String nombres;
-    protected String apellidos;
-    protected String email;
+    protected String Accountname;
     protected String passwordHash;
-    protected String telefono;
-    protected boolean estado;
+    protected boolean estado; 
    
     protected Usuario() {};
     
-    protected Usuario(int id, TipoRol rol,String dni, String nombres, String apellidos, 
-                   String email, String passwordHash, String telefono, boolean estado) {
+    protected User(int id, TipoRol rol, String accountname, String passwordHash, boolean estado) {
         this.id = id;
         this.rol = rol;
-        this.dni = dni;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.email = email;
+        Accountname = accountname;
         this.passwordHash = passwordHash;
-        this.telefono = telefono;
         this.estado = estado;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public TipoRol getRol() {
+   public TipoRol getRol() {
         return rol;
     }
 
@@ -40,36 +23,12 @@ public class Usuario {
         this.rol = rol;
     }
 
-    public String getDni() {
-        return dni;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     public String getPasswordHash() {
@@ -80,20 +39,20 @@ public class Usuario {
         this.passwordHash = passwordHash;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getAccountname() {
+        return Accountname;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setAccountname(String accountname) {
+        Accountname = accountname;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public int getId() {
+        return id;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setId(int id) {
+        this.id = id;
     }
 
 }
