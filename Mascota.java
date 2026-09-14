@@ -33,6 +33,14 @@ public class Mascota {
         this.fechaRegistro = LocalDate.now(); 
     }
 
+public Mascota(int id, Cliente cliente, String nombre, Especie especie, Sexo sexo, LocalDate fechaNacimiento, double peso, LocalDate fechaRegistro) {
+        this(cliente, nombre, especie, sexo, fechaNacimiento, peso); 
+        this.id = id;
+        this.fechaRegistro = fechaRegistro; 
+    }
+
+
+    //-----------------------------------
     public int getId() {
         return id;
     }
