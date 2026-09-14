@@ -15,6 +15,20 @@ public class Usuario {
         this.estado = estado;
     }
 
+public void desactivarCuenta() {
+        this.estado = false;
+    }
+
+public void activarCuenta() {
+        this.estado = true;
+    }
+
+
+
+
+
+
+    //-------------------------------------
    public TipoRol getRol() {
         return rol;
     }
