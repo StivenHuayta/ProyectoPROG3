@@ -36,54 +36,39 @@ public Servicio(int id, String nombre, int duracionMinutos, BigDecimal precioBas
         this.id = id;
         this.activo = activo;
     }
+//--------------------------------------------------------------------
+public void actualizarPrecio(BigDecimal nuevoPrecio) {
+        if (nuevoPrecio == null || nuevoPrecio.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("El nuevo precio no puede ser nulo ni negativo.");
+        }
+        this.precioBase = nuevoPrecio;
+    }
+
+    public void actualizarDuracion(int nuevaDuracionMinutos) {
+        if (nuevaDuracionMinutos <= 0) {
+            throw new IllegalArgumentException("La duración debe ser mayor a 0.");
+        }
+        this.duracionMinutos = nuevaDuracionMinutos;
+    }
+
+    public void desactivar() {
+        this.activo = false;
+    }
+
+    public void activar() {
+        this.activo = true;
+    }
+
+
 
     
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getDuracionMinutos() {
-        return duracionMinutos;
-    }
-
-    public void setDuracionMinutos(int duracionMinutos) {
-        this.duracionMinutos = duracionMinutos;
-    }
-
-    public BigDecimal getPrecioBase() {
-        return precioBase;
-    }
-
-    public void setPrecioBase(BigDecimal precioBase) {
-        this.precioBase = precioBase;
-    }
-
-    public TipoServicio getTipoServicio() {
-        return tipoServicio;
-    }
-
-    public void setTipoServicio(TipoServicio tipoServicio) {
-        this.tipoServicio = tipoServicio;
-    }
-
-    public boolean isActivo() {
-        return activo;
-    }
-
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
+    //----------------------------------------------
+    
+   public int getId() { return id; }
+    public String getNombre() { return nombre; }
+    public int getDuracionMinutos() { return duracionMinutos; }
+    public BigDecimal getPrecioBase() { return precioBase; }
+    public TipoServicio getTipoServicio() { return tipoServicio; }
+    public boolean isActivo() { return activo; }
 
 }
