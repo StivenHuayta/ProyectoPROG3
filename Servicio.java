@@ -28,9 +28,16 @@ public class Servicio {
         this.duracionMinutos = duracionMinutos;
         this.precioBase = precioBase;
         this.tipoServicio = tipoServicio;
-        this.activo = true; // Por defecto nace activo para poder venderse
+        this.activo = true; 
     }
 
+public Servicio(int id, String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio, boolean activo) {
+        this(nombre, duracionMinutos, precioBase, tipoServicio); // Reutiliza validaciones
+        this.id = id;
+        this.activo = activo;
+    }
+
+    
     public int getId() {
         return id;
     }
