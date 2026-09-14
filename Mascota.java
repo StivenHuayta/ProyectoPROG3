@@ -12,16 +12,25 @@ public class Mascota {
 
     public Mascota() {}
 
-    public Mascota(int id, Cliente cliente, String nombre, Especie especie, 
-                   LocalDate fechaNacimiento, Sexo sexo,double peso,LocalDate fechaRegistro) {
-        this.id = id;
+    public Mascota(Cliente cliente, String nombre, Especie especie, Sexo sexo, LocalDate fechaNacimiento, double peso) {
+        // Validaciones
+        if ( nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre de la mascota es obligatorio");
+        }
+        if (fechaNacimiento != null && fechaNacimiento.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("La fecha de nacimiento no puede ser en el futuro.");
+        }
+        if (peso <= 0) {
+            throw new IllegalArgumentException("El peso debe ser mayor a 0.");
+        }
+
         this.cliente = cliente;
         this.nombre = nombre;
         this.especie = especie;
-        this.fechaNacimiento = fechaNacimiento;
         this.sexo = sexo;
+        this.fechaNacimiento = fechaNacimiento;
         this.peso = peso;
-        this.fechaRegistro = fechaRegistro;
+        this.fechaRegistro = LocalDate.now(); 
     }
 
     public int getId() {
