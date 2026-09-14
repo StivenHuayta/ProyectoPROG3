@@ -1,16 +1,16 @@
 public class Usuario {
     protected int id;
     protected TipoRol rol;
-    protected String Accountname;
+    protected String accountName;
     protected String passwordHash;
     protected boolean estado; 
    
     protected Usuario() {};
     
-    protected User(int id, TipoRol rol, String accountname, String passwordHash, boolean estado) {
+    protected Usuario(int id, TipoRol rol, String accountName, String passwordHash, boolean estado) {
         this.id = id;
         this.rol = rol;
-        Accountname = accountname;
+        this.accountName = accountName;
         this.passwordHash = passwordHash;
         this.estado = estado;
     }
