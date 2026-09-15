@@ -1,11 +1,14 @@
-
+import java.util.List;
+import java.util.ArrayList;
 
 public class Cliente {
 	private int id; 
 	private Usuario credenciales; 
 	private String direccion;
 	private String contactoDeEmergencia; 
+	private List<Mascota> mascotas;
 
+	
 	public Cliente() {}
 
 	//CONSTRUCTOR PARA NUEVOS REGISTROS
