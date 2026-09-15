@@ -9,14 +9,14 @@ public class Cita {
 	private LocalDateTime fechaHoraCita;
 	//hay fechahora fin en base de datos
 	private Estado estado;
-	// hay motivo tipovarchar en base de  dtos
+	private String motivo; 
 
 	public Cita() {}
 
 	protected Cita() {}
 
     // Constructor para una NUEVA cita (Desde la interfaz del Cliente o Recepcionista)
-    public Cita(Sede sede, Empleado empleado, Mascota mascota, Servicio servicio, LocalDateTime fechaHoraCita) {
+    public Cita(Sede sede, Empleado empleado, Mascota mascota, Servicio servicio, LocalDateTime fechaHoraCita , String motivo) {
         if (sede == null || empleado == null || mascota == null || servicio == null) {
             throw new IllegalArgumentException("Faltan datos obligatorios para registrar la cita.");
         }
@@ -30,11 +30,12 @@ public class Cita {
         this.mascota = mascota;
         this.servicio = servicio;
         this.fechaHoraCita = fechaHoraCita;
+		this.motivo = motivo; 
         this.estado = Estado.PENDIENTE; // Toda cita nueva nace en estado PENDIENTE por defecto
     }
 
     // Constructor desde SQL
-    public Cita(int id, Sede sede, Empleado empleado, Mascota mascota, Servicio servicio, LocalDateTime fechaHoraCita, Estado estado) {
+    public Cita(int id, Sede sede, Empleado empleado, Mascota mascota, Servicio servicio, LocalDateTime fechaHoraCita, Estado estado , String motivo) {
         this.id = id;
         this.sede = sede;
         this.empleado = empleado;
@@ -42,6 +43,7 @@ public class Cita {
         this.servicio = servicio;
         this.fechaHoraCita = fechaHoraCita;
         this.estado = estado;
+		this.motivo = motivo; 
     }
 
 
