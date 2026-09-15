@@ -7,8 +7,8 @@ public class Atencion {
     private int id;
     private Cita cita;   
     
-    /*private Empleado atendidoPor; 
-    
+    /*
+    private Empleado atendidoPor; 
     private Mascota mascota; 
     private Servicio servicio; modificado por repeticion, ya estan en cita
     */
@@ -27,7 +27,7 @@ public class Atencion {
 
     public Atencion() {}
 
-    public Atencion(Cita cita, Empleado atendidoPor, Mascota mascota, Servicio servicio,  LocalDateTime fechaHora   , double pesoActual, String temperatura, 
+    public Atencion(Cita cita,  LocalDateTime fechaHora   , double pesoActual, String temperatura, 
                     String motivoUObservaciones, String diagnostico, String recetaTratamiento, BigDecimal montoTotal) {
         
         if (cita == null || atendidoPor == null) {
@@ -42,16 +42,13 @@ public class Atencion {
         
         boolean esClinico = (diagnostico != null && !diagnostico.isBlank()) || 
                             (recetaTratamiento != null && !recetaTratamiento.isBlank());
-                            
+        /*                    
         if (esClinico && !atendidoPor.esVeterinario()) {
             throw new IllegalStateException("Solo un empleado con rol de VETERINARIO puede emitir diagnósticos y recetas.");
         }
+        */
 
-
-        this.mascota = mascota; ;
-        this.servicio = servicio; 
         this.cita = cita;
-        this.atendidoPor = atendidoPor;
         this.fechaHora = LocalDateTime.now(); 
         this.pesoActual = pesoActual;
         this.temperatura = temperatura;
@@ -65,11 +62,11 @@ public class Atencion {
         this.cita.getMascota().actualizarPeso(this.pesoActual);
     }
 
-public Atencion(int id, Cita cita, Empleado atendidoPor,  Mascota    , Servicio servicio, LocalDateTime fechaHora, double pesoActual, 
+public Atencion(int id, Cita cita, LocalDateTime fechaHora, double pesoActual, 
                     String temperatura, String motivoUObservaciones, String diagnostico, 
                     String recetaTratamiento, BigDecimal montoTotal) {
         
-    this(cita, atendidoPor ,  mascota, servicio,fechaHora, pesoActual,temperatura,motivoUObservaciones,diagnostico,recetaTratamiento,montoTotal );
+    this(cita,fechaHora, pesoActual,temperatura,motivoUObservaciones,diagnostico,recetaTratamiento,montoTotal );
     this.id = id;
         
     }
@@ -82,7 +79,7 @@ public boolean esAtencionMedica() {
     //-----------------------------
     public int getId() { return id; }
     public Cita getCita() { return cita; }
-    public Empleado getAtendidoPor() { return atendidoPor; }
+    public Empleado getAtendidoPor() { return atendidoPor; }//modificar para obtener de cita
     public LocalDateTime getFechaHora() { return fechaHora; }
     public double getPesoActual() { return pesoActual; }
     public String getTemperatura() { return temperatura; }
