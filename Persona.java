@@ -59,10 +59,6 @@ public class Persona{
         return this.id;
     }
 
-	public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNombres() {
         return nombres;
     }
