@@ -1,4 +1,4 @@
-scripts sql
+ -- scripts sql
 
  -- creacion de sedes
 INSERT INTO sedes(sede_id,nombre,direccion,telefono,activo) VALUES (501,"Principal","av. la republica 1130","999999999",1);
