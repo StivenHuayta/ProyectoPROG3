@@ -9,7 +9,7 @@ public class Empleado{
     private boolean activo;
     private List<RolEmpleado> roles;
     private List<Horario> horario; 
-    // private Sede sede; el horario guardara la sede
+
 
     
     public Empleado() {}
