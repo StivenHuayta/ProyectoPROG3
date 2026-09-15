@@ -42,11 +42,11 @@ public class Atencion {
         
         boolean esClinico = (diagnostico != null && !diagnostico.isBlank()) || 
                             (recetaTratamiento != null && !recetaTratamiento.isBlank());
-        /*                    
-        if (esClinico && !atendidoPor.esVeterinario()) {
+                          
+        if (esClinico && !cita.getEmpleado().esVeterinario()) {
             throw new IllegalStateException("Solo un empleado con rol de VETERINARIO puede emitir diagnósticos y recetas.");
         }
-        */
+        
 
         this.cita = cita;
         this.fechaHora = LocalDateTime.now(); 
