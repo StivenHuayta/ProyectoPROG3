@@ -6,7 +6,7 @@ public class Servicio {
     //en la base de datos hay una descripcion del servicio 
     private int duracionMinutos;       
     private BigDecimal precioBase;     
-    private TipoServicio tipoServicio; 
+    private TipoServicio tipoServicio; // enum de tipo servicio falta en la abse de datos
     private boolean activo;
 
     public Servicio() {}
