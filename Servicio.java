@@ -2,7 +2,8 @@ import java.math.BigDecimal;
 
 public class Servicio {
     private int id;
-    private String nombre;             
+    private String nombre;   
+    //en la base de datos hay una descripcion del servicio 
     private int duracionMinutos;       
     private BigDecimal precioBase;     
     private TipoServicio tipoServicio; 
