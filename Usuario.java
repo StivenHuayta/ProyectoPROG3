@@ -44,7 +44,15 @@ public void activarCuenta() {
 
 
     //-------------------------------------
-   public TipoRol getRol() {
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public TipoRol getRol() {
         return rol;
     }
 
@@ -68,18 +76,12 @@ public void activarCuenta() {
         this.passwordHash = passwordHash;
     }
 
-    private String getAccountname() {
-        return Accountname;
+    public String getAccountName() {
+        return this.accountName;
     }
 
-    private void setAccountname(String accountname) {
-        Accountname = accountname;
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    
 
 }
