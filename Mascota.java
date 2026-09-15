@@ -6,10 +6,12 @@ public class Mascota {
     private Cliente cliente;
     private String nombre;
     private Especie especie;
+    // hay raza en base de datos
     private LocalDate fechaNacimiento;
     private Sexo sexo;
     private double peso;
-    private LocalDate fechaRegistro;
+    private LocalDate fechaRegistro; // falta en base de datos
+    //bolleano activo en base de datos, y no aca
 
     public Mascota() {}
 
