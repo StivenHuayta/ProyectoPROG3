@@ -48,10 +48,6 @@ public void activarCuenta() {
         return id;
     }
     
-    public void setId(int id) {
-        this.id = id;
-    }
-    
     public TipoRol getRol() {
         return rol;
     }
