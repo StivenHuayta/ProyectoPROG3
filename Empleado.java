@@ -40,7 +40,7 @@ public class Empleado{
 
     //CONSTRUCTOR DESDE DATOS DE SQL
     
-    public Empleado(int id Usuario credenciales, RolEmpleado rol, String numeroColegiatura, boolean activo) {
+    public Empleado(int id, Usuario credenciales, RolEmpleado rol, String numeroColegiatura, boolean activo) {
         this( credenciales, rol, numeroColegiatura);
         this.id = id;
         this.activo = activo;
