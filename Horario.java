@@ -13,7 +13,7 @@ public class Horario {
     private Sede sede; 
     public Horario() { }
 
-    public Horario(Empleado empleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin , Private sede) {
+    public Horario(Empleado empleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin , Sede sede) {
         if (empleado == null) {
             throw new IllegalArgumentException("El horario debe pertenecer a un empleado.");
         }
@@ -37,8 +37,8 @@ public class Horario {
         this.activo = true; 
     }
 
-public Horario(int id, Empleado empleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin, boolean activo) {
-        this(empleado, diaSemana, horaInicio, horaFin); // Reutiliza la validación de horas
+public Horario(int id, Empleado empleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin, boolean activo , Sede sede) {
+        this(empleado, diaSemana, horaInicio, horaFin , sede); // Reutiliza la validación de horas
         this.id = id;
         this.activo = activo;
     }
