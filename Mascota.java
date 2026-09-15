@@ -1,5 +1,8 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class Mascota {
     private int id;
@@ -9,8 +12,11 @@ public class Mascota {
     private LocalDate fechaNacimiento;
     private Sexo sexo;
     private double peso;
-    private LocalDate fechaRegistro; // falta en base de datos
-    //bolleano activo en base de datos, y no aca
+    private LocalDate fechaRegistro; 
+
+    private List<Atencion> historial; 
+    
+ 
 
     public Mascota() {}
 
@@ -26,6 +32,7 @@ public class Mascota {
             throw new IllegalArgumentException("El peso debe ser mayor a 0.");
         }
 
+        this.historial = new ArrayList<>(); 
         this.cliente = cliente;
         this.nombre = nombre;
         this.especie = especie;
