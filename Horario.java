@@ -68,28 +68,4 @@ public boolean cubreLaHora(LocalTime horaSolicitada) {
     public LocalTime getHoraFin() { return horaFin; }
     public boolean isActivo() { return activo; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
-
-    public void setDiaSemana(DayOfWeek diaSemana) {
-        this.diaSemana = diaSemana;
-    }
-
-    public void setHoraInicio(LocalTime horaInicio) {
-        this.horaInicio = horaInicio;
-    }
-
-    public void setHoraFin(LocalTime horaFin) {
-        this.horaFin = horaFin;
-    }
-
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
-
 }
