@@ -41,25 +41,45 @@ public void actualizarDatosLogisticos(String nuevaDireccion, String nuevoContact
 
 
 	
-	public int getIdCliente() {
-		return idCliente;
-	}
+	public int getId() {
+        return this.id;
+    }
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	
+	public Persona getDatosPersonales() {
+        return this.datosPersonales;
+    }
+
+    public void setDatosPersonales(Persona datosPersonales) {
+        this.datosPersonales = datosPersonales;
+    }
+
+ 	public Usuario getCredenciales() {
+        return this.credenciales;
+    }
+
+    public void setCredenciales(Usuario credenciales) {
+        this.credenciales = credenciales;
+    }
 
 	public String getDireccion() {
 		return direccion;
 	}
 
-
+	public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
 	public String getContactoDeEmergencia() {
 		return contactoDeEmergencia;
 	}
+
+	public void setContactoDeEmergencia(String contactoDeEmergencia) {
+        this.contactoDeEmergencia = contactoDeEmergencia;
+    }
 
 
 
