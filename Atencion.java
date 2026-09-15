@@ -10,7 +10,6 @@ public class Atencion {
     private Empleado atendidoPor; // Quién lo atendió realmente. no hay en base de datos
     
     private Mascota mascota; 
-    private Sede sede; 
     private Servicio servicio; 
     
     private LocalDateTime fechaHora; // 
@@ -28,7 +27,7 @@ public class Atencion {
 
     public Atencion() {}
 
-    public Atencion(Cita cita, Empleado atendidoPor, Mascota mascota , Sede sede , Servicio servicio,  LocalDateTime fechaHora   , double pesoActual, String temperatura, 
+    public Atencion(Cita cita, Empleado atendidoPor, Mascota mascota, Servicio servicio,  LocalDateTime fechaHora   , double pesoActual, String temperatura, 
                     String motivoUObservaciones, String diagnostico, String recetaTratamiento, BigDecimal montoTotal) {
         
         if (cita == null || atendidoPor == null) {
@@ -49,8 +48,7 @@ public class Atencion {
         }
 
 
-        this.mascota = mascota; 
-        this.sede = sede;
+        this.mascota = mascota; ;
         this.servicio = servicio; 
         this.cita = cita;
         this.atendidoPor = atendidoPor;
@@ -67,11 +65,11 @@ public class Atencion {
         this.cita.getMascota().actualizarPeso(this.pesoActual);
     }
 
-public Atencion(int id, Cita cita, Empleado atendidoPor,  Mascota   , Sede sede , Servicio servicio, LocalDateTime fechaHora, double pesoActual, 
+public Atencion(int id, Cita cita, Empleado atendidoPor,  Mascota    , Servicio servicio, LocalDateTime fechaHora, double pesoActual, 
                     String temperatura, String motivoUObservaciones, String diagnostico, 
                     String recetaTratamiento, BigDecimal montoTotal) {
         
-    this(cita, atendidoPor ,  mascota, sede, servicio,fechaHora, pesoActual,temperatura,motivoUObservaciones,diagnostico,recetaTratamiento,montoTotal );
+    this(cita, atendidoPor ,  mascota, servicio,fechaHora, pesoActual,temperatura,motivoUObservaciones,diagnostico,recetaTratamiento,montoTotal );
     this.id = id;
         
     }
