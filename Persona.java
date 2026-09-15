@@ -55,10 +55,13 @@ public class Persona{
 	
  //-------------------------------------------// 
 
-	public int getid(){
-		return id; 
-	}
+	public int getId() {
+        return this.id;
+    }
 
+	public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombres() {
         return nombres;
@@ -71,8 +74,6 @@ public class Persona{
     public String getDni() {
         return dni;
     }
-
-	
 	
     public void setDni(String dni) {
         this.dni = dni;
