@@ -4,7 +4,6 @@ import java.util.List;
 public class Empleado{
 
     private int id;
-    private Persona datosPersonales;
     private String numeroColegiatura;
     private Usuario credenciales;
     private boolean activo;
