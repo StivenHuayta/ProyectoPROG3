@@ -2,7 +2,6 @@
 
 public class Cliente {
 	private int id; 
-	private Persona datosPersonales; 
 	private Usuario credenciales; 
 	private String direccion;
 	private String contactoDeEmergencia; 
@@ -10,8 +9,8 @@ public class Cliente {
 	public Cliente() {}
 
 	//CONSTRUCTOR PARA NUEVOS REGISTROS
-	public Cliente(Persona datosPersonales, Usuario credenciales, String direccion, String contactoDeEmergencia) {
-        if (datosPersonales == null || credenciales == null) {
+	public Cliente( Usuario credenciales, String direccion, String contactoDeEmergencia) {
+        if (credenciales == null) {
             throw new IllegalArgumentException("El cliente debe tener datos personales y credenciales de acceso");
         }
         if (contactoDeEmergencia == null || contactoDeEmergencia.isBlank()) {
@@ -24,8 +23,8 @@ public class Cliente {
         this.contactoDeEmergencia = contactoDeEmergencia;
     }
 
-public Cliente(int id, Persona datosPersonales, Usuario credenciales, String direccion, String contactoDeEmergencia) {
-        this(datosPersonales, credenciales, direccion, contactoDeEmergencia);
+public Cliente(int id, Usuario credenciales, String direccion, String contactoDeEmergencia) {
+        this(credenciales, direccion, contactoDeEmergencia);
         this.id = id;
     }
 
