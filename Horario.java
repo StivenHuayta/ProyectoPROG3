@@ -5,6 +5,7 @@ import java.time.Duration;
 public class Horario {
     private int id;
     private Empleado empleado; 
+    // en la base de datos se guarda la sede a la que pertenece el horario. se deberia guardar aca?
     private DayOfWeek diaSemana;
     private LocalTime horaInicio;
     private LocalTime horaFin;
