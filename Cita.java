@@ -99,32 +99,5 @@ public void cancelar() {
     public LocalDateTime getFechaHoraCita() { return fechaHoraCita; }
     public Estado getEstado() { return estado; }
 
-	public void setIdCita(int idCita) {
-        this.idCita = idCita;
-    }
-
-    public void setSede(Sede sede) {
-        this.sede = sede;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
-
-    public void setMascota(Mascota mascota) {
-        this.mascota = mascota;
-    }
-
-    public void setServicio(Servicio servicio) {
-        this.servicio = servicio;
-    }
-
-    public void setFechaHoraCita(LocalDateTime fechaHoraCita) {
-        this.fechaHoraCita = fechaHoraCita;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-	
 
 }
