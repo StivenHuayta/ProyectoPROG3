@@ -20,6 +20,7 @@ public class Cliente {
             throw new IllegalArgumentException("El contacto de emergencia es obligatorio para la clínica");
         }
 
+		this.mascotas = new ArrayList<>(); 
         this.datosPersonales = datosPersonales;
         this.credenciales = credenciales;
         this.direccion = direccion;
