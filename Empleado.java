@@ -27,7 +27,7 @@ public class Empleado{
             }
             this.numeroColegiatura = numeroColegiatura.trim();
         } else {
-            // --Si es ESTILISTA o RECEPCIONISTA.--
+            
             this.numeroColegiatura = null; 
         }
 
