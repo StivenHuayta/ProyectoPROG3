@@ -1,61 +1,37 @@
 public class Usuario {
     protected int id;
     protected TipoRol rol;
-    protected String accountName;
+    protected String dni;
+    protected String nombres;
+    protected String apellidos;
+    protected String email;
     protected String passwordHash;
-    protected boolean estado; 
-	private String dni;
-	private String nombres;
-	private String apellidoP; 
-	private String apellidoM; 
-	private String telefono; 
-	private String email; 
-
-
-    
+    protected String telefono;
+    protected boolean estado;
+   
     protected Usuario() {};
-
-    //PARA NUEVOS USUARIOS
-    public Usuario(TipoRol rol, String accountName, String passwordHash) {
-        if (rol == null || accountName == null || passwordHash == null || accountName.isBlank()) {
-            throw new IllegalArgumentException("Las credenciales base no pueden estar vacías");
-        }
-        this.rol = rol;
-        this.accountName = accountName;
-        this.passwordHash = passwordHash;
-        this.estado = true; 
-    }
-
-    //PARA USUARIOS YA REGISTRADOS 
-    public Usuario(int id, TipoRol rol, String accountName, String passwordHash, boolean estado) {
-        this(rol, accountName, passwordHash); //  reusamos las validaciones
+    
+    protected Usuario(int id, TipoRol rol,String dni, String nombres, String apellidos, 
+                   String email, String passwordHash, String telefono, boolean estado) {
         this.id = id;
+        this.rol = rol;
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.telefono = telefono;
         this.estado = estado;
     }
-    
-    public boolean tieneAccesoPermitido() {
-        return this.estado; // POR SI AGREGAMOS CONDICIONES EXTRA PARA TENER ACCESO
-    }
 
-    
-public void desactivarCuenta() {
-        this.estado = false;
-    }
-
-public void activarCuenta() {
-        this.estado = true;
-    }
-
-
-
-
-
-
-    //-------------------------------------
     public int getId() {
         return id;
     }
-    
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public TipoRol getRol() {
         return rol;
     }
@@ -64,28 +40,60 @@ public void activarCuenta() {
         this.rol = rol;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
     public boolean isEstado() {
         return estado;
     }
 
     public void setEstado(boolean estado) {
         this.estado = estado;
-    }
-
-    private String getPasswordHash() {
-        return passwordHash;
-    }
-
-    private void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public String getAccountName() {
-        return this.accountName;
-    }
-
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
     }
 
 }
