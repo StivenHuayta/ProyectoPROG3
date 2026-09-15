@@ -79,7 +79,7 @@ public boolean esAtencionMedica() {
     //-----------------------------
     public int getId() { return id; }
     public Cita getCita() { return cita; }
-    public Empleado getAtendidoPor() { return atendidoPor; }//modificar para obtener de cita
+    public Empleado getAtendidoPor() { return cita.getEmpleado(); }
     public LocalDateTime getFechaHora() { return fechaHora; }
     public double getPesoActual() { return pesoActual; }
     public String getTemperatura() { return temperatura; }
