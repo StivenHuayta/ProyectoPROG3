@@ -8,7 +8,7 @@ public class Empleado{
     private Usuario credenciales;
     private boolean activo;
     private List<RolEmpleado> roles;
-    
+    private List<Horario> horario; 
     // private Sede sede; el horario guardara la sede
 
     
@@ -19,7 +19,7 @@ public class Empleado{
             throw new IllegalArgumentException("Faltan datos obligatorios para registrar al empleado.");
         }
 
-        // --regla de negocio --
+        // --regla de negocio
         if (roles.contains(RolEmpleado.VETERINARIO)) {
             if (numeroColegiatura == null || numeroColegiatura.isBlank()) {
                 throw new IllegalArgumentException("Un veterinario requiere obligatoriamente un número de colegiatura.");
@@ -32,8 +32,8 @@ public class Empleado{
 
        
         this.credenciales = credenciales;
-        this.rol = rol;
-
+        this.rol = roles;
+        this.horario = new ArrayList<>(); 
         this.activo = true; 
     }
 
