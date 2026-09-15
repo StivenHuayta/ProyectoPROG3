@@ -90,4 +90,45 @@ public boolean esAtencionMedica() {
     public String getRecetaTratamiento() { return recetaTratamiento; }
     public BigDecimal getMontoTotal() { return montoTotal; }
 
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCita(Cita cita) {
+        this.cita = cita;
+    }
+
+    public void setAtendidoPor(Empleado atendidoPor) {
+        this.atendidoPor = atendidoPor;
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
+    public void setPesoActual(double pesoActual) {
+        this.pesoActual = pesoActual;
+    }
+
+    public void setTemperatura(String temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    public void setMotivoUObservaciones(String motivoUObservaciones) {
+        this.motivoUObservaciones = motivoUObservaciones;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    public void setRecetaTratamiento(String recetaTratamiento) {
+        this.recetaTratamiento = recetaTratamiento;
+    }
+
+    public void setMontoTotal(BigDecimal montoTotal) {
+        this.montoTotal = montoTotal;
+    }
+
 }
