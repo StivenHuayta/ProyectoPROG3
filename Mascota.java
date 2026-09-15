@@ -15,7 +15,7 @@ public class Mascota {
     private LocalDate fechaRegistro; 
 
     private List<Atencion> historial; 
-    
+ 
  
 
     public Mascota() {}
