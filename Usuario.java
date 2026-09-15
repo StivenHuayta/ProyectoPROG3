@@ -5,6 +5,7 @@ public class Usuario {
     private String nombres;
     private String apellidos;
     private String email;
+    private String accountName;
     private String passwordHash;
     private String telefono;
     private boolean estado;
@@ -14,7 +15,7 @@ public class Usuario {
     
     // Constructor para un NUEVO registro
     public Usuario(TipoRol rol, String dni, String nombres, String apellidos, 
-                   String email, String passwordHash, String telefono) {
+                   String email, String accountName, String passwordHash, String telefono) {
         
         // Validaciones combinadas
         if (rol == null) {
@@ -38,14 +39,15 @@ public class Usuario {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.email = email;
+        this.accountName = accountName;
         this.passwordHash = passwordHash;
         this.telefono = telefono;
         this.estado = true; 
     }
 
     public Usuario(int id, TipoRol rol, String dni, String nombres, String apellidos, 
-                   String email, String passwordHash, String telefono, boolean estado) {
-        this(rol, dni, nombres, apellidos, email, passwordHash, telefono); 
+                   String email,String accountName, String passwordHash, String telefono, boolean estado) {
+        this(rol, dni, nombres, apellidos, email,accountName, passwordHash, telefono); 
         this.id = id;
         this.estado = estado;
     }
@@ -83,6 +85,7 @@ public class Usuario {
     public String getNombres() { return nombres; }
     public String getApellidos() { return apellidos; }
     public String getEmail() { return email; }
+    public String accountName() { return accountName; }
     public String getPasswordHash() { return passwordHash; }
     public String getTelefono() { return telefono; }
     public boolean isEstado() { return estado; }
