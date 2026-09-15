@@ -7,11 +7,11 @@ public class Atencion {
     private int id;
     private Cita cita;   
     
-    private Empleado atendidoPor; // Quién lo atendió realmente. no hay en base de datos
+    /*private Empleado atendidoPor; 
     
     private Mascota mascota; 
-    private Servicio servicio; 
-    
+    private Servicio servicio; modificado por repeticion, ya estan en cita
+    */
     private LocalDateTime fechaHora; // 
 
     
