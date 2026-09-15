@@ -7,8 +7,8 @@ public class Atencion {
     private int id;
     private Cita cita;   
     
-    private Empleado atendidoPor; // Quién lo atendió realmente.
-    private LocalDateTime fechaHora;
+    private Empleado atendidoPor; // Quién lo atendió realmente. no hay en base de datos
+    private LocalDateTime fechaHora; // 
 
     
     // Parámetros físicos tomados en el momento
@@ -19,7 +19,7 @@ public class Atencion {
     private String diagnostico;          // Null si fue estetica
     private String recetaTratamiento;    // Null si fue corte
     private BigDecimal montoTotal; // no hay monto total en la base de datos....
-    //hay un varchar que guarda observaciones en la base de datos y aca no
+    //hay un varchar que guarda "observaciones" en la base de datos y aca no
 
     public Atencion() {}
 
