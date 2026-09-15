@@ -71,32 +71,60 @@ public boolean esVeterinario() {
 
     //----------------------------------------------------------------------
 
-    public int getid(){
-        return id; 
-    
+    public int getId() {
+        return this.id;
     }
 
-  public Persona getDatosPersonales() { return datosPersonales; } 
-  public Usuario getCredenciales() { return credenciales; }
-    
-    
-    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Persona getDatosPersonales() { 
+        return datosPersonales; 
+    } 
+
+    public void setDatosPersonales(Persona datosPersonales) {
+        this.datosPersonales = datosPersonales;
+    }
+
     public String getNumeroColegiatura() {
         return numeroColegiatura;
     }
 
+    public void setNumeroColegiatura(String numeroColegiatura) {
+        this.numeroColegiatura = numeroColegiatura;
+    }
+    
+    public Usuario getCredenciales() { 
+        return credenciales; 
+    }
+
+    public void setCredenciales(Usuario credenciales) {
+        this.credenciales = credenciales;
+    }
 
     public boolean isActivo() {
         return activo;
     }
 
-   
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
     public List<RolEmpleado> getRoles() {
         return roles;
     }
 
+    public void setRoles(List<RolEmpleado> roles) {
+        this.roles = roles;
+    }
+
     public Sede getSede() {
         return sede;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
     }
 
 }
