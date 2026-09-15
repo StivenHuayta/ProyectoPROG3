@@ -67,6 +67,7 @@ public boolean cubreLaHora(LocalTime horaSolicitada) {
 
     public int getId() { return id; }
     public Empleado getEmpleado() { return empleado; }
+    public Sede getSede(){return sede; }
     public DayOfWeek getDiaSemana() { return diaSemana; }
     public LocalTime getHoraInicio() { return horaInicio; }
     public LocalTime getHoraFin() { return horaFin; }
