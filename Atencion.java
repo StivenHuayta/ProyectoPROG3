@@ -29,10 +29,12 @@ public class Atencion {
 
     public Atencion(Cita cita,  LocalDateTime fechaHora   , double pesoActual, String temperatura, 
                     String motivoUObservaciones, String diagnostico, String recetaTratamiento, BigDecimal montoTotal) {
-        
-        if (cita == null || atendidoPor == null) {
+        /*
+        if (cita == null || cita.getEmpleado() == null) {
             throw new IllegalArgumentException("La cita y el empleado son obligatorios para el registro.");
         }
+        se elimina ya que empleado ya tiene una cita, creo
+        */ 
         if (pesoActual <= 0) {
             throw new IllegalArgumentException("El peso registrado debe ser mayor a 0.");
         }
