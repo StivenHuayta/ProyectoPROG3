@@ -5,6 +5,7 @@ public class Sede{
   private String telefono;
   private boolean activo; 
 
+  private List<Empleado> empleados; 
 
   
   //REGISTRO DE NUEVA SEDE
@@ -15,7 +16,7 @@ public class Sede{
         if (direccion == null || direccion.isBlank()) {
             throw new IllegalArgumentException("La dirección de la sede es obligatoria.");
         }
-        
+        this.empleados = new ArrayList<>(); 
         this.nombre = nombre.trim();
         this.direccion = direccion.trim();
         this.telefono = telefono;
