@@ -15,8 +15,8 @@ public class Empleado{
     
     public Empleado() {}
 
-    public Empleado(Persona datosPersonales, Usuario credenciales, List<RolEmpleado> roles , String numeroColegiatura, Sede sede) {
-        if (datosPersonales == null || credenciales == null || sede == null || roles == null) {
+    public Empleado(Persona datosPersonales, Usuario credenciales, List<RolEmpleado> roles , String numeroColegiatura) {
+        if (datosPersonales == null || credenciales == null  || roles == null) {
             throw new IllegalArgumentException("Faltan datos obligatorios para registrar al empleado.");
         }
 
@@ -34,14 +34,14 @@ public class Empleado{
         this.datosPersonales = datosPersonales;
         this.credenciales = credenciales;
         this.rol = rol;
-        this.sede = sede;
+
         this.activo = true; 
     }
 
     //CONSTRUCTOR DESDE DATOS DE SQL
     
-    public Empleado(int id, Persona datosPersonales, Usuario credenciales, RolEmpleado rol, String numeroColegiatura, Sede sede, boolean activo) {
-        this(datosPersonales, credenciales, rol, numeroColegiatura, sede);
+    public Empleado(int id, Persona datosPersonales, Usuario credenciales, RolEmpleado rol, String numeroColegiatura, boolean activo) {
+        this(datosPersonales, credenciales, rol, numeroColegiatura);
         this.id = id;
         this.activo = activo;
     }
