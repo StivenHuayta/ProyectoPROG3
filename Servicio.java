@@ -3,7 +3,7 @@ import java.math.BigDecimal;
 public class Servicio {
     private int id;
     private String nombre;   
-    //en la base de datos hay una descripcion del servicio 
+    private String desc; 
     private int duracionMinutos;       
     private BigDecimal precioBase;     
     private TipoServicio tipoServicio; // enum de tipo servicio falta en la abse de datos
@@ -11,7 +11,7 @@ public class Servicio {
 
     public Servicio() {}
 
-    public Servicio(String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio) {
+    public Servicio(String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio, String desc) {
         if (nombre == null || nombre.isBlank()) {
             throw new IllegalArgumentException("El nombre del servicio es obligatorio.");
         }
@@ -21,19 +21,20 @@ public class Servicio {
         if (precioBase == null || precioBase.compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("El precio base no puede ser nulo ni negativo.");
         }
-        if (tipoServicio == null) {
-            throw new IllegalArgumentException("El tipo de servicio es obligatorio.");
+        if (tipoServicio == null || desc == null ) {
+            throw new IllegalArgumentException("El tipo y descripcion del servicio es obligatorio.");
         }
 
         this.nombre = nombre.trim();
         this.duracionMinutos = duracionMinutos;
         this.precioBase = precioBase;
         this.tipoServicio = tipoServicio;
+        this.desc = desc; 
         this.activo = true; 
     }
 
-public Servicio(int id, String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio, boolean activo) {
-        this(nombre, duracionMinutos, precioBase, tipoServicio); 
+public Servicio(int id, String nombre, int duracionMinutos, BigDecimal precioBase, TipoServicio tipoServicio, boolean activo , String desc) {
+        this(nombre, duracionMinutos, precioBase, tipoServicio , desc); 
         this.id = id;
         this.activo = activo;
     }
