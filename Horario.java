@@ -10,17 +10,20 @@ public class Horario {
     private LocalTime horaInicio;
     private LocalTime horaFin;
     private boolean activo;
-
+    private Sede sede; 
     public Horario() { }
 
-    public Horario(Empleado empleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin) {
+    public Horario(Empleado empleado, DayOfWeek diaSemana, LocalTime horaInicio, LocalTime horaFin , Private sede) {
         if (empleado == null) {
             throw new IllegalArgumentException("El horario debe pertenecer a un empleado.");
         }
         if (horaInicio == null || horaFin == null) {
             throw new IllegalArgumentException("Las horas de inicio y fin son obligatorias.");
         }
-        
+
+        if(sede == null){
+           throw new IllegalArgumentException("El horario debe pertenecer a una sede."); 
+        }
         
         if (!horaInicio.isBefore(horaFin)) {
             throw new IllegalArgumentException("La hora de inicio debe ser estrictamente menor a la hora de fin.");
@@ -30,6 +33,7 @@ public class Horario {
         this.diaSemana = diaSemana;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
+        this.sede = sede; 
         this.activo = true; 
     }
 
