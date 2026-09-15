@@ -88,20 +88,43 @@ public void cancelar() {
 
 
 
-
-
-
-
-
 	
 	//-----------------------------------------
 
-	public int getId() { return id; }
+	public int getIdCita() { return id; }
     public Sede getSede() { return sede; }
     public Empleado getEmpleado() { return empleado; }
     public Mascota getMascota() { return mascota; }
     public Servicio getServicio() { return servicio; }
     public LocalDateTime getFechaHoraCita() { return fechaHoraCita; }
     public Estado getEstado() { return estado; }
+
+	public void setIdCita(int idCita) {
+        this.idCita = idCita;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
+    }
+
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
+    }
+
+    public void setFechaHoraCita(LocalDateTime fechaHoraCita) {
+        this.fechaHoraCita = fechaHoraCita;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+	
 
 }
