@@ -5,9 +5,11 @@ public class Cita {
 	private Sede sede;
 	private Empleado empleado;
 	private Mascota mascota;
-	private Servicio servicio;
+	private Servicio servicio; //tiene su propia coneccion con servivios en la base de datos, nada que modificar
 	private LocalDateTime fechaHoraCita;
+	//hay fechahora fin en base de datos
 	private Estado estado;
+	// hay motivo tipovarchar en base de  dtos
 
 	public Cita() {}
 
