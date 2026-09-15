@@ -10,7 +10,7 @@ public class Empleado{
     private boolean activo;
     private List<RolEmpleado> roles;
     
-    private Sede sede;
+    // private Sede sede; el horario guardara la sede
 
     
     public Empleado() {}
@@ -59,12 +59,12 @@ public boolean esVeterinario() {
         this.activo = true;
     }
     
-    public void trasladarDeSede(Sede nuevaSede) {
-        if (nuevaSede == null) {
-            throw new IllegalArgumentException("La nueva sede no puede ser nula.");
-        }
-        this.sede = nuevaSede;
-    }
+    //public void trasladarDeSede(Sede nuevaSede) {
+    //    if (nuevaSede == null) {
+    //        throw new IllegalArgumentException("La nueva sede no puede ser nula.");
+    //    }
+    //    this.sede = nuevaSede;
+    //}
 
 
 
@@ -100,8 +100,8 @@ public boolean esVeterinario() {
         return roles;
     }
 
-    public Sede getSede() {
-        return sede;
-    }
+    //public Sede getSede() {
+    //    return sede;
+    //}
 
 }
