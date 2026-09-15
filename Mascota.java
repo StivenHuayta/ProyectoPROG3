@@ -6,7 +6,6 @@ public class Mascota {
     private Cliente cliente;
     private String nombre;
     private Especie especie;
-    // hay raza en base de datos
     private LocalDate fechaNacimiento;
     private Sexo sexo;
     private double peso;
