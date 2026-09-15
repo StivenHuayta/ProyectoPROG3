@@ -4,7 +4,15 @@ public class Usuario {
     protected String accountName;
     protected String passwordHash;
     protected boolean estado; 
-   
+	private String dni;
+	private String nombres;
+	private String apellidoP; 
+	private String apellidoM; 
+	private String telefono; 
+	private String email; 
+
+
+    
     protected Usuario() {};
 
     //PARA NUEVOS USUARIOS
