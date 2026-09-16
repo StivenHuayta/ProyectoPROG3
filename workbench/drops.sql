@@ -1,0 +1,14 @@
+drop table horarios_laborales;
+drop table empleados_puestos;
+drop table sedes_servicios;
+drop table citas_servicios;
+drop table puestos;
+drop table servicios;
+drop table atenciones;
+drop table citas;
+drop table mascotas;
+drop table clientes;
+drop table empleados;
+drop table sedes;
+drop table usuarios;
+commit;
