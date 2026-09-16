@@ -9,6 +9,15 @@ BEGIN
 	
 END //
 
+
+
+DROP PROCEDURE IF EXISTS mostrar_sede //
+CREATE PROCEDURE mostrar_sede(id int )
+BEGIN
+	select * from sedes where sede_id=id;
+	
+END //
+
  -- actualizar direccion
 DROP PROCEDURE IF EXISTS modificar_direccion //
 CREATE PROCEDURE modificar_direccion(id int, dir varchar(60) )
@@ -24,3 +33,5 @@ BEGIN
 	UPDATE sedes SET activo = 0 WHERE sede_id = id;
 	
 END //
+
+DELIMITER ;
