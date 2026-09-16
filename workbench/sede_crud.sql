@@ -35,3 +35,6 @@ BEGIN
 END //
 
 DELIMITER ;
+--pruebas crud sede
+call agregar_sede('sedeprueba1','direcciongenerica','777');
+call mostrar_sede(3);
