@@ -13,6 +13,7 @@
         <module>mimados-dao</module>
         <module>mimados-bl</module>
         <module>mimados-db-manager</module>
+        <module>mimados-model</module>
     </modules>
 
     <properties>

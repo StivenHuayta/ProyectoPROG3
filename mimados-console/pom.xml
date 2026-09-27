@@ -11,6 +11,14 @@
 
     <artifactId>mimados-console</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>pe.pucp.prog3.mimados</groupId>
+            <artifactId>mimados-bl</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <properties>
         <maven.compiler.source>26</maven.compiler.source>
         <maven.compiler.target>26</maven.compiler.target>
