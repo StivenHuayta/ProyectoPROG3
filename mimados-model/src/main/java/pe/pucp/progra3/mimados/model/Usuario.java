@@ -8,4 +8,5 @@ public class Usuario {
     private String email;
     private String passwordHash;
     //test
+    //test
 }
