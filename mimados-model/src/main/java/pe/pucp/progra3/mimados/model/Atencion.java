@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Atencion {
-    private int id;
+    private Integer id;
     private Cita cita;
     private Empleado empleado;
     private LocalDateTime fechaHoraRegistro;
@@ -20,11 +20,11 @@ public class Atencion {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

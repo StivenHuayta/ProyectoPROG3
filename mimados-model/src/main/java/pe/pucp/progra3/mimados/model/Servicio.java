@@ -2,24 +2,26 @@ package pe.pucp.progra3.mimados.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Servicio {
-    private int id;
+    private Integer id;
     private String nombre;
     private String descripcion;
     private BigDecimal precioReferencial;
-    private int duracionMinutos;
+    private Integer duracionMinutos;
     private Boolean activo;
     private String usuarioCreacion;
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
+    private List<PuestoServicio> puestoServicios;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -47,11 +49,11 @@ public class Servicio {
         this.precioReferencial = precioReferencial;
     }
 
-    public int getDuracionMinutos() {
+    public Integer getDuracionMinutos() {
         return duracionMinutos;
     }
 
-    public void setDuracionMinutos(int duracionMinutos) {
+    public void setDuracionMinutos(Integer duracionMinutos) {
         this.duracionMinutos = duracionMinutos;
     }
 
@@ -93,5 +95,13 @@ public class Servicio {
 
     public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
+    }
+
+    public List<PuestoServicio> getPuestoServicios() {
+        return puestoServicios;
+    }
+
+    public void setPuestoServicios(List<PuestoServicio> puestoServicios) {
+        this.puestoServicios = puestoServicios;
     }
 }

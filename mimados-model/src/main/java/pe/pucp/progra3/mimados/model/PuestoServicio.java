@@ -1,17 +1,16 @@
 package pe.pucp.progra3.mimados.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-public class Puesto {
+public class PuestoServicio {
     private Integer id;
-    private String nombre;
-    private String descripcion;
+    private Servicio servicio;
+    private Puesto puesto;
+    private Boolean activo;
     private String usuarioCreacion;
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
-    private List<PuestoServicio> puestoServicios;
 
     public Integer getId() {
         return id;
@@ -21,28 +20,28 @@ public class Puesto {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Servicio getServicio() {
+        return servicio;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public Puesto getPuesto() {
+        return puesto;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setPuesto(Puesto puesto) {
+        this.puesto = puesto;
     }
 
-    public String getUsuarioModificacion() {
-        return usuarioModificacion;
+    public Boolean getActivo() {
+        return activo;
     }
 
-    public void setUsuarioModificacion(String usuarioModificacion) {
-        this.usuarioModificacion = usuarioModificacion;
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public String getUsuarioCreacion() {
@@ -51,6 +50,14 @@ public class Puesto {
 
     public void setUsuarioCreacion(String usuarioCreacion) {
         this.usuarioCreacion = usuarioCreacion;
+    }
+
+    public String getUsuarioModificacion() {
+        return usuarioModificacion;
+    }
+
+    public void setUsuarioModificacion(String usuarioModificacion) {
+        this.usuarioModificacion = usuarioModificacion;
     }
 
     public LocalDateTime getFechaCreacion() {
@@ -67,13 +74,5 @@ public class Puesto {
 
     public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
-    }
-
-    public List<PuestoServicio> getPuestoServicios() {
-        return puestoServicios;
-    }
-
-    public void setPuestoServicios(List<PuestoServicio> puestoServicios) {
-        this.puestoServicios = puestoServicios;
     }
 }

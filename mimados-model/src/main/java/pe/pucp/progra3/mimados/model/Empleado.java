@@ -21,9 +21,8 @@ public class Empleado {
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
-
-    public List<EmpleadoPuesto> empleadoPuestos;
-    private List<Horario> horarios;
+    private List<EmpleadoPuesto> empleadoPuestos;
+    private List <HorarioLaboral> horariosLaborales;
 
     public Empleado() {}
 
@@ -38,10 +37,6 @@ public class Empleado {
         this.fechaCreacion = fechaCreacion;
         this.fechaModificacion = fechaModificacion;
     }
-
-
-
-
 
 
 
@@ -140,5 +135,13 @@ public class Empleado {
 
     public void setEmpleadoPuestos(List<EmpleadoPuesto> empleadoPuestos) {
         this.empleadoPuestos = empleadoPuestos;
+    }
+
+    public List<HorarioLaboral> getHorariosLaborales() {
+        return horariosLaborales;
+    }
+
+    public void setHorariosLaborales(List<HorarioLaboral> horariosLaborales) {
+        this.horariosLaborales = horariosLaborales;
     }
 }
