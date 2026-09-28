@@ -2,18 +2,13 @@ package pe.pucp.progra3.mimados.model;
 
 import java.time.LocalDateTime;
 
-public class Usuario {
+public class SedeServicio {
     private int id;
-    private String dni;
-    private String nombres;
-    private String apellidos;
-    private String email;
-    private String passwordHash;
-    private String telefono;
+    private Servicio servicio;
+    private Sede sede;
+    private Boolean activo;
     private String usuarioCreacion;
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
-
-
 }
