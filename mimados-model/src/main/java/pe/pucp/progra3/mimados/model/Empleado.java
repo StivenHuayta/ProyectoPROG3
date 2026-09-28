@@ -23,54 +23,10 @@ public class Empleado {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-
-    private List<Puesto> puestos;
-    private List<Horario> horario;
-
-
-
-
-
+    public List<EmpleadoPuesto> empleadoPuestos;
+    private List<Horario> horarios;
 
     public Empleado() {}
-
-    public Empleado(Usuario credenciales, List<Puesto> puestos , String numeroColegiatura) {
-        if ( credenciales == null  || puestos == null) {
-            throw new IllegalArgumentException("Faltan datos obligatorios para registrar al empleado.");
-        }
-
-        // regla de negocio
-        if (esVeterinario(puestos)) {
-            if (numeroColegiatura == null || numeroColegiatura.isBlank()) {
-                throw new IllegalArgumentException("Un veterinario requiere obligatoriamente un número de colegiatura.");
-            }
-            this.codigoCmvp = numeroColegiatura.trim();
-        } else {
-
-            this.codigoCmvp = null;
-        }
-
-
-        this.usuario = credenciales;
-        this.puestos = puestos;
-        this.horario = new ArrayList<>();
-        this.activo = true;
-    }
-
-    //CONSTRUCTOR DESDE DATOS DE SQL
-
-    public Empleado(int usuario_id, List<Puesto> puestos, String numeroColegiatura, boolean activo) {
-        this(puestos , numeroColegiatura);
-        this.usuario_id = usuario_id;
-        this.activo = activo;
-    }
-
-
-    public Empleado(List<Puesto> puestos , String numeroColegiatura ){
-
-        this.puestos = puestos;
-        this.codigoCmvp = numeroColegiatura;
-    }
 
     public Empleado(int sede_id, int usuario_id, String codigoCmvp,LocalDateTime fecha_contratacion , Boolean esAdmin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
         this.sede_id = sede_id;
@@ -85,17 +41,8 @@ public class Empleado {
         this.fechaModificacion = fechaModificacion;
     }
 
-    public boolean esVeterinario(List<Puesto> Listapuestos) {
-        for( Puesto p : Listapuestos ){
 
 
-
-
-        }
-
-        return true;
-        //
-    }
 
     public void darDeBaja() {
         this.activo = false;
@@ -107,28 +54,94 @@ public class Empleado {
 
 
 
+    public boolean esVeterinario(List<Puesto> Listapuestos) {
+        for( Puesto p : Listapuestos ){
 
-    //----------------------------------------------------------------------
+        }
 
-    public int getId(){
-        return usuario_id;
+        return true;
+        //
     }
 
-    public Usuario getCredenciales() {
+
+
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public String getNumeroColegiatura() {
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Sede getSede() {
+        return sede;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
+
+    public String getCodigoCmvp() {
         return codigoCmvp;
     }
 
+    public void setCodigoCmvp(String codigoCmvp) {
+        this.codigoCmvp = codigoCmvp;
+    }
 
-    public boolean isActivo() {
+    public Boolean getEsAdmin() {
+        return esAdmin;
+    }
+
+    public void setEsAdmin(Boolean esAdmin) {
+        this.esAdmin = esAdmin;
+    }
+
+    public Boolean getActivo() {
         return activo;
     }
 
-    public List<Puesto> getRoles() {
-        return puestos;
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
+    public String getUsuarioCreacion() {
+        return usuarioCreacion;
+    }
+
+    public void setUsuarioCreacion(String usuarioCreacion) {
+        this.usuarioCreacion = usuarioCreacion;
+    }
+
+    public String getUsuarioModificacion() {
+        return usuarioModificacion;
+    }
+
+    public void setUsuarioModificacion(String usuarioModificacion) {
+        this.usuarioModificacion = usuarioModificacion;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public LocalDateTime getFechaModificacion() {
+        return fechaModificacion;
+    }
+
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
+    }
+
+    public List<EmpleadoPuesto> getEmpleadoPuestos() {
+        return empleadoPuestos;
+    }
+
+    public void setEmpleadoPuestos(List<EmpleadoPuesto> empleadoPuestos) {
+        this.empleadoPuestos = empleadoPuestos;
+    }
 }

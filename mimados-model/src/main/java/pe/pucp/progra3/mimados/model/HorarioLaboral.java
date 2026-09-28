@@ -1,41 +1,58 @@
 package pe.pucp.progra3.mimados.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.time.LocalTime;
 
-public class Cliente {
-    private Usuario usuario;
-    private String direccion;
-    private String telefonoEmergencia;
+public class HorarioLaboral {
+    private int id;
+    private Empleado empleado;
+    private DiaSemana diaSemana;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
     private Boolean activo;
     private String usuarioCreacion;
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
-    private List<Mascota> mascotas;
 
-    public Usuario getUsuario() {
-        return usuario;
+    public int getId() {
+        return id;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
-    public String getTelefonoEmergencia() {
-        return telefonoEmergencia;
+    public DiaSemana getDiaSemana() {
+        return diaSemana;
     }
 
-    public void setTelefonoEmergencia(String telefonoEmergencia) {
-        this.telefonoEmergencia = telefonoEmergencia;
+    public void setDiaSemana(DiaSemana diaSemana) {
+        this.diaSemana = diaSemana;
+    }
+
+    public LocalTime getHoraFin() {
+        return horaFin;
+    }
+
+    public void setHoraFin(LocalTime horaFin) {
+        this.horaFin = horaFin;
+    }
+
+    public LocalTime getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(LocalTime horaInicio) {
+        this.horaInicio = horaInicio;
     }
 
     public Boolean getActivo() {
@@ -76,13 +93,5 @@ public class Cliente {
 
     public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
-    }
-
-    public List<Mascota> getMascotas() {
-        return mascotas;
-    }
-
-    public void setMascotas(List<Mascota> mascotas) {
-        this.mascotas = mascotas;
     }
 }
