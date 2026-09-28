@@ -10,4 +10,8 @@ public class Puesto {
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
+
+
+
+
 }
