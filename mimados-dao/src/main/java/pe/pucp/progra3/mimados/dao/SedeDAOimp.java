@@ -29,8 +29,9 @@ public class SedeDAOimp implements SedeDAO {
                         rs.getBoolean("activo"),
                         rs.getString("usuario_creacion"),
                         rs.getString("usuario_ultima_actualizacion"),
-                        rs.getObject("fecha_creacion" , LocalDateTime.class),
-                        rs.getObject("fecha_ultima_actualizacion" , LocalDateTime.class)
+                        rs.getObject("fecha_ultima_actualizacion" , LocalDateTime.class),
+                        rs.getObject("fecha_creacion" , LocalDateTime.class)
+
 
                 );
                 sedes.add(sede);

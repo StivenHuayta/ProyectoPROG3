@@ -16,7 +16,7 @@ public class Sede {
     public Sede() {
     }
 
-    public Sede(int id, String nombre, String direccion, String telefono, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, LocalDateTime fechaCreacion) {
+    public Sede(int id, String nombre, String direccion, String telefono, boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, LocalDateTime fechaCreacion) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
