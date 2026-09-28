@@ -1,50 +1,58 @@
 package pe.pucp.progra3.mimados.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.time.LocalTime;
 
-public class Empleado {
-    private Usuario usuario;
-    private Sede sede;
-    private String codigoCmvp;
-    private Boolean esAdmin;
+public class HorarioLaboral {
+    private int id;
+    private Empleado empleado;
+    private DiaSemana diaSemana;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
     private Boolean activo;
     private String usuarioCreacion;
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
-    private List<EmpleadoPuesto> empleadoPuestos;
 
-    public Usuario getUsuario() {
-        return usuario;
+    public int getId() {
+        return id;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Sede getSede() {
-        return sede;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setSede(Sede sede) {
-        this.sede = sede;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
-    public String getCodigoCmvp() {
-        return codigoCmvp;
+    public DiaSemana getDiaSemana() {
+        return diaSemana;
     }
 
-    public void setCodigoCmvp(String codigoCmvp) {
-        this.codigoCmvp = codigoCmvp;
+    public void setDiaSemana(DiaSemana diaSemana) {
+        this.diaSemana = diaSemana;
     }
 
-    public Boolean getEsAdmin() {
-        return esAdmin;
+    public LocalTime getHoraFin() {
+        return horaFin;
     }
 
-    public void setEsAdmin(Boolean esAdmin) {
-        this.esAdmin = esAdmin;
+    public void setHoraFin(LocalTime horaFin) {
+        this.horaFin = horaFin;
+    }
+
+    public LocalTime getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(LocalTime horaInicio) {
+        this.horaInicio = horaInicio;
     }
 
     public Boolean getActivo() {
@@ -85,13 +93,5 @@ public class Empleado {
 
     public void setFechaModificacion(LocalDateTime fechaModificacion) {
         this.fechaModificacion = fechaModificacion;
-    }
-
-    public List<EmpleadoPuesto> getEmpleadoPuestos() {
-        return empleadoPuestos;
-    }
-
-    public void setEmpleadoPuestos(List<EmpleadoPuesto> empleadoPuestos) {
-        this.empleadoPuestos = empleadoPuestos;
     }
 }
