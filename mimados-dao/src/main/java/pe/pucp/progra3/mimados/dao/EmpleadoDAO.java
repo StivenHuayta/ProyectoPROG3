@@ -9,8 +9,8 @@ public interface EmpleadoDAO  {
 
     public List<Empleado> listar_empleados() throws SQLException;
 
-//    public void insertar_empleado() throws SQLException;
-//    public void eliminar_empleado() throws SQLException;
+    public void insertar_empleado(Empleado empleado) throws SQLException;
+    public void eliminar_empleado(int id_empleado) throws SQLException;
 
 
 }

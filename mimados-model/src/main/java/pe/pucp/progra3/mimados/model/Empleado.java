@@ -14,7 +14,6 @@ public class Empleado {
     private Usuario usuario;
     private Sede sede;
 
-    private LocalDateTime fechaContratacion;
     private String codigoCmvp;
     private Boolean esAdmin;
     private Boolean activo;
@@ -28,11 +27,10 @@ public class Empleado {
 
     public Empleado() {}
 
-    public Empleado(int sede_id, int usuario_id, String codigoCmvp,LocalDateTime fecha_contratacion , Boolean esAdmin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
+    public Empleado(int sede_id, int usuario_id, String codigoCmvp , Boolean esAdmin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
         this.sede_id = sede_id;
         this.usuario_id = usuario_id;
         this.codigoCmvp = codigoCmvp;
-        this.fechaContratacion = fecha_contratacion;
         this.esAdmin = esAdmin;
         this.activo = activo;
         this.usuarioCreacion = usuarioCreacion;
@@ -44,6 +42,17 @@ public class Empleado {
 
 
 
+
+
+
+    public boolean esVeterinario(List<EmpleadoPuesto> Listapuestos) {
+        for( EmpleadoPuesto p : Listapuestos ){
+        }
+
+        return true;
+        //
+    }
+
     public void darDeBaja() {
         this.activo = false;
     }
@@ -51,18 +60,6 @@ public class Empleado {
     public void reincorporar() {
         this.activo = true;
     }
-
-
-
-    public boolean esVeterinario(List<Puesto> Listapuestos) {
-        for( Puesto p : Listapuestos ){
-
-        }
-
-        return true;
-        //
-    }
-
 
 
     public Usuario getUsuario() {
