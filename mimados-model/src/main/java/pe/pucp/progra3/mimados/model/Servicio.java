@@ -17,6 +17,15 @@ public class Servicio {
     private LocalDateTime fechaModificacion;
     private List<PuestoServicio> puestoServicios;
 
+    public Servicio(Integer id ,String nombre, String descripcion, BigDecimal precioReferencial, Integer duracionMinutos, Boolean activo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precioReferencial = precioReferencial;
+        this.duracionMinutos = duracionMinutos;
+        this.activo = activo;
+    }
+
     public Integer getId() {
         return id;
     }
