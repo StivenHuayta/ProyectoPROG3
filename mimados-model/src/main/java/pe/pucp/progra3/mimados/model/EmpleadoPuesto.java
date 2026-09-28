@@ -1,25 +1,22 @@
 package pe.pucp.progra3.mimados.model;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class EmpleadoPuesto {
-    private int id;
+    private Integer id;
     private Puesto puesto;
     private Empleado empleado;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFin;
     private Boolean activo;
     private String usuarioCreacion;
     private String usuarioModificacion;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,22 +34,6 @@ public class EmpleadoPuesto {
 
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
-    }
-
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
     }
 
     public String getUsuarioCreacion() {

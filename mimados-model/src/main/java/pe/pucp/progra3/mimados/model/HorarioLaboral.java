@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class HorarioLaboral {
-    private int id;
+    private Integer id;
     private Empleado empleado;
     private DiaSemana diaSemana;
     private LocalTime horaInicio;
@@ -15,11 +15,11 @@ public class HorarioLaboral {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

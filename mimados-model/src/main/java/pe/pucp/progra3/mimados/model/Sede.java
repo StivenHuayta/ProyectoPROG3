@@ -3,7 +3,7 @@ package pe.pucp.progra3.mimados.model;
 import java.time.LocalDateTime;
 
 public class Sede {
-    private int id;
+    private Integer id;
     private String nombre;
     private String direccion;
     private String telefono;
@@ -13,11 +13,11 @@ public class Sede {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

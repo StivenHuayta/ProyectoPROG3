@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Mascota {
-    private int id;
+    private Integer id;
     private Cliente cliente;
     private String nombre;
     private Especie especie;
@@ -20,11 +20,11 @@ public class Mascota {
     private LocalDateTime fechaModificacion;
     private List<Cita> citas;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
