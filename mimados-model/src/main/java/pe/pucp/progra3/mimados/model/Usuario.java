@@ -17,6 +17,18 @@ public class Usuario {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public Usuario() {
+    }
+
+    public Usuario(String dni, String nombres, String apellidos, String email, String passwordHash, String telefono) {
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.telefono = telefono;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -13,6 +13,14 @@ public class CitaServicio {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public CitaServicio() {
+    }
+
+    public CitaServicio(Cita cita, SedeServicio sedeServicio) {
+        this.cita = cita;
+        this.sedeServicio = sedeServicio;
+    }
+
     public Cita getCita() {
         return cita;
     }

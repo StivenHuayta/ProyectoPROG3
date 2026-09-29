@@ -12,6 +12,16 @@ public class PuestoServicio {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public PuestoServicio() {
+        this.activo = true;
+    }
+
+    public PuestoServicio(Servicio servicio, Puesto puesto) {
+        this();
+        this.servicio = servicio;
+        this.puesto = puesto;
+    }
+
     public Integer getId() {
         return id;
     }

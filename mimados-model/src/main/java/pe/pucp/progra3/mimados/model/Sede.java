@@ -13,6 +13,17 @@ public class Sede {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public Sede() {
+        this.activo = true;
+    }
+
+    public Sede(String nombre, String direccion, String telefono) {
+        this();
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+    }
+
     public Integer getId() {
         return id;
     }

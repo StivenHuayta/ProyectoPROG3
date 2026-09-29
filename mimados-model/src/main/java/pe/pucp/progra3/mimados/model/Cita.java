@@ -1,6 +1,7 @@
 package pe.pucp.progra3.mimados.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cita {
@@ -17,6 +18,19 @@ public class Cita {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
     private List<CitaServicio> citasServicio;
+
+    public Cita() {
+        this.citasServicio = new ArrayList<>();
+        this.estado = Estado.PROGRAMADA;
+    }
+
+    public Cita(Empleado empleado, Mascota mascota, LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin) {
+        this();
+        this.empleado = empleado;
+        this.mascota = mascota;
+        this.fechaHoraInicio = fechaHoraInicio;
+        this.fechaHoraFin = fechaHoraFin;
+    }
 
     public Integer getId() {
         return id;

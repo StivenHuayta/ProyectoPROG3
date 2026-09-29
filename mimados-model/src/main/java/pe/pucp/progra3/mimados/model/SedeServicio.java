@@ -12,6 +12,16 @@ public class SedeServicio {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public SedeServicio() {
+        this.activo = true;
+    }
+
+    public SedeServicio(Servicio servicio, Sede sede) {
+        this();
+        this.servicio = servicio;
+        this.sede = sede;
+    }
+
     public Integer getId() {
         return id;
     }

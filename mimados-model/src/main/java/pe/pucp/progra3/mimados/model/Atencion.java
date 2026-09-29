@@ -20,6 +20,17 @@ public class Atencion {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public Atencion() {
+        this.fechaHoraRegistro = LocalDateTime.now();
+    }
+
+    public Atencion(Cita cita, Empleado empleado, BigDecimal montoTotal) {
+        this();
+        this.cita = cita;
+        this.empleado = empleado;
+        this.montoTotal = montoTotal;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -15,6 +15,18 @@ public class HorarioLaboral {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public HorarioLaboral() {
+        this.activo = true;
+    }
+
+    public HorarioLaboral(Empleado empleado, DiaSemana diaSemana, LocalTime horaInicio, LocalTime horaFin) {
+        this();
+        this.empleado = empleado;
+        this.diaSemana = diaSemana;
+        this.horaInicio = horaInicio;
+        this.horaFin = horaFin;
+    }
+
     public Integer getId() {
         return id;
     }
