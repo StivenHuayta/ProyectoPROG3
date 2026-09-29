@@ -26,6 +26,19 @@ public class Mascota {
         this.activo = true;
     }
 
+    public Mascota(Integer id, Cliente cliente, String nombre, Especie especie, String raza, Sexo sexo, LocalDate fechaNacimiento, Double pesoReferencial, Boolean activo) {
+        this();
+        this.id = id;
+        this.cliente = cliente;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.sexo = sexo;
+        this.fechaNacimiento = fechaNacimiento;
+        this.pesoReferencial = pesoReferencial;
+        this.activo = activo;
+    }
+
     public Integer getId() {
         return id;
     }

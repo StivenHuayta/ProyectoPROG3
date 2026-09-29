@@ -13,6 +13,15 @@ public class CitaServicio {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public CitaServicio() {}
+
+    public CitaServicio(Cita cita, SedeServicio sedeServicio, BigDecimal precioAplicado, String notas) {
+        this.cita = cita;
+        this.sedeServicio = sedeServicio;
+        this.precioAplicado = precioAplicado;
+        this.notas = notas;
+    }
+
     public Cita getCita() {
         return cita;
     }

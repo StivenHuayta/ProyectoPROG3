@@ -18,6 +18,19 @@ public class Puesto {
         this.puestoServicios = new ArrayList<>();
     }
 
+    public Puesto(Integer id, String nombre, String descripcion) {
+        this();
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
+    public Puesto(String nombre, String descripcion) {
+        this();
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
     public Integer getId() {
         return id;
     }
