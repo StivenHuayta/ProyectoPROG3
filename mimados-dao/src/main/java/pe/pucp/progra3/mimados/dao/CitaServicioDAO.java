@@ -1,0 +1,14 @@
+package pe.pucp.progra3.mimados.dao;
+
+import pe.pucp.progra3.mimados.model.CitaServicio;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public interface CitaServicioDAO {
+
+    public void insertar_cita_servicio(CitaServicio citaServicio) throws SQLException;
+    public List<CitaServicio> listar_servicios_por_cita(int idCita) throws SQLException;
+    public void actualizar_cita_servicio(CitaServicio citaServicio) throws SQLException;
+
+}
