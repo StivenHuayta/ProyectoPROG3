@@ -5,13 +5,8 @@ import java.time.LocalTime;
 import java.time.Duration;
 
 public class Horario {
-
-
-
-
         private int id;
         private Empleado empleado;
-
         private DayOfWeek diaSemana;
         private LocalTime horaInicio;
         private LocalTime horaFin;

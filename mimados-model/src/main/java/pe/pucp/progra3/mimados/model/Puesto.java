@@ -18,11 +18,6 @@ public class Puesto {
         this.puestoServicios = new ArrayList<>();
     }
 
-    public Puesto(String nombre) {
-        this();
-        this.nombre = nombre;
-    }
-
     public Integer getId() {
         return id;
     }
