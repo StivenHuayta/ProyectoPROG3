@@ -5,72 +5,85 @@ import pe.pucp.progra3.mimados.DBManager.TransactionContext;
 import pe.pucp.progra3.mimados.dao.SedeServicioDAO;
 import pe.pucp.progra3.mimados.model.Sede;
 import pe.pucp.progra3.mimados.model.SedeServicio;
+import pe.pucp.progra3.mimados.model.Servicio;
 
-import java.sql.*;
-import java.time.LocalDateTime;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SedeServicioDAOimp implements SedeServicioDAO {
 
+    @Override
+    public void insertar_sede_servicio(SedeServicio sedeServicio) throws SQLException {
+        /*
+        CREATE PROCEDURE insertar_sede_servicio(
+            IN p_servicio_id INT,
+            IN p_sede_id INT,
+            OUT p_sede_servicio_id INT
+        )
+        */
+        Connection connection = TransactionContext.getConnection();
+        try (CallableStatement cs = connection.prepareCall("{CALL insertar_sede_servicio(?, ?, ?)}")) {
+            cs.registerOutParameter(3, Types.INTEGER);
+
+            cs.setInt(1, sedeServicio.getServicio().getId());
+            cs.setInt(2, sedeServicio.getSede().getId());
+
+            cs.execute();
+
+            int idGenerado = cs.getInt(3);
+            sedeServicio.setId(idGenerado);
+        }
+    }
 
     @Override
-    public List<SedeServicio> listar_sede_servicios() throws SQLException {
+    public List<Servicio> listar_servicios_por_sede(int idSede) throws SQLException {
+        /*
+        CREATE PROCEDURE listar_servicios_por_sede(IN p_sede_id INT)
+        SELECT b.servicio_id, b.nombre, b.descripcion, b.precio_referencial, b.duracion_minutos, a.activo as activo_sede
+        FROM sede_servicio a, servicio b WHERE a.servicio_id=b.servicio_id and a.sede_id=p_sede_id;
+        */
+        List<Servicio> servicios = new ArrayList<>();
+        try (Connection connection = DBManager.getInstance().getConnection();
+             CallableStatement cs = connection.prepareCall("{CALL listar_servicios_por_sede(?)}")) {
 
-        List<SedeServicio> sedesservicios = new ArrayList<>();
-        try(Connection connection = DBManager.getInstance().getConnection();
-            CallableStatement cs = connection.prepareCall(" {CALL listar_sede_servicios()}");
-            ResultSet rs = cs.executeQuery()){
-
-            while(rs.next()){
-
-                SedeServicio ss = new SedeServicio(
-                        rs.getInt("sede_servicio_id"),
-                        rs.getInt("servicio_id"),
-                        rs.getInt("sede_id"),
-                        rs.getBoolean("activo"),
-                        rs.getString("usuario_creacion"),
-                        rs.getString("usuario_ultima_actualizacion"),
-                        rs.getObject("fecha_ultima_actualizacion" , LocalDateTime.class),
-                        rs.getObject("fecha_creacion" , LocalDateTime.class)
-                );
-                sedesservicios.add(ss);
+            cs.setInt(1, idSede);
+            try (ResultSet rs = cs.executeQuery()) {
+                while (rs.next()) {
+                    Servicio servicio = new Servicio(
+                            rs.getInt("servicio_id"),
+                            rs.getString("nombre"),
+                            rs.getString("descripcion"),
+                            rs.getBigDecimal("precio_referencial"),
+                            rs.getInt("duracion_minutos"),
+                            rs.getBoolean("activo_sede")
+                    );
+                    servicios.add(servicio);
+                }
             }
         }
-        return sedesservicios;
+        return servicios;
     }
 
     @Override
-    public void insertar_sede_servicio(SedeServicio ss) throws SQLException {
-
+    public void eliminar_sede_servicio(int idSedeServicio) throws SQLException {
+        /*
+        CREATE PROCEDURE eliminar_sede_servicio(
+            IN p_sede_servicio_id INT
+        )
+        */
         Connection connection = TransactionContext.getConnection();
-
-        try(CallableStatement cs = connection.prepareCall("{CALL insertar_sede_servicio(?,?,?)}")){
-            cs.registerOutParameter(3 , Types.INTEGER);
-            cs.setInt(1 , ss.getServicio().getId());
-            cs.setInt(2, ss.getSede().getId());
-            cs.execute();
-            int id_generado = cs.getInt(3);
-            ss.setId(id_generado);
-        }
-
-    }
-
-    @Override
-    public void eliminar_sede_servicio(int id_sede_servicio) throws SQLException {
-
-        Connection connection = TransactionContext.getConnection();
-
-        try(CallableStatement cs = connection.prepareCall("{CALL eliminar_sede_servicio(?)}")){
-
-            cs.setInt(1 , id_sede_servicio);
+        try (CallableStatement cs = connection.prepareCall("{CALL eliminar_sede_servicio(?)}")) {
+            cs.setInt(1, idSedeServicio);
 
             int filasAfectadas = cs.executeUpdate();
-
             if (filasAfectadas == 0) {
-                System.out.println("Advertencia: No se encontró la sede con ID " + id_sede_servicio);
+                System.out.println("Advertencia: No se encontró la relación sede_servicio con ID " + idSedeServicio);
             }
         }
-
     }
 }

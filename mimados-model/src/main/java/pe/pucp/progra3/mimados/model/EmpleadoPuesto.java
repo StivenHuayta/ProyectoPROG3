@@ -22,6 +22,11 @@ public class EmpleadoPuesto {
         this.activo = activo;
     }
 
+    public EmpleadoPuesto(Integer id, Puesto puesto, Empleado empleado, Boolean activo) {
+        this(puesto, empleado, activo);
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
