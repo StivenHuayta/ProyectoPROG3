@@ -1,7 +1,8 @@
-package pe.pucp.progra3.mimados.dao;
+package pe.pucp.progra3.mimados.dao.imp;
 
 import pe.pucp.progra3.mimados.DBManager.DBManager;
 import pe.pucp.progra3.mimados.DBManager.TransactionContext;
+import pe.pucp.progra3.mimados.dao.SedeDAO;
 import pe.pucp.progra3.mimados.model.Sede;
 
 import java.sql.*;

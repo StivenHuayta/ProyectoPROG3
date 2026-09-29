@@ -34,7 +34,7 @@ public class Empleado {
         this.sede = sede;
     }
 
-    public Empleado() {}
+
 
     public Empleado(int sede_id, int usuario_id, String codigoCmvp , Boolean esAdmin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
         this.getSede().setId(sede_id);

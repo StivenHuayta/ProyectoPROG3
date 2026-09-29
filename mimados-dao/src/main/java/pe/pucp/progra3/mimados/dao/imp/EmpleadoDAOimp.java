@@ -1,10 +1,9 @@
-package pe.pucp.progra3.mimados.dao;
+package pe.pucp.progra3.mimados.dao.imp;
 
 import pe.pucp.progra3.mimados.DBManager.DBManager;
 import pe.pucp.progra3.mimados.DBManager.TransactionContext;
+import pe.pucp.progra3.mimados.dao.EmpleadoDAO;
 import pe.pucp.progra3.mimados.model.Empleado;
-import pe.pucp.progra3.mimados.model.Sede;
-import pe.pucp.progra3.mimados.model.Usuario;
 
 
 import java.sql.*;
@@ -12,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmpleadoDAOimp implements EmpleadoDAO{
+public class EmpleadoDAOimp implements EmpleadoDAO {
 
     @Override
     public List<Empleado> listar_empleados() throws SQLException {
