@@ -21,6 +21,22 @@ public class Empleado {
     private List<EmpleadoPuesto> empleadoPuestos;
     private List<HorarioLaboral> horariosLaborales;
 
+    public Empleado() {}
+
+    public Empleado(int sede_id, int usuario_id, String codigoCmvp , Boolean esAdmin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
+        this.getSede().setId(sede_id);
+        this.getUsuario().setId(usuario_id);
+        this.codigoCmvp = codigoCmvp;
+        this.esAdmin = esAdmin;
+        this.activo = activo;
+        this.usuarioCreacion = usuarioCreacion;
+        this.usuarioModificacion = usuarioModificacion;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
+    }
+
+
+
     public boolean esVeterinario(List<EmpleadoPuesto> Listapuestos) {
         for( EmpleadoPuesto p : Listapuestos ){
         }

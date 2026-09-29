@@ -1,4 +1,4 @@
-package pe.pucp.progra3.mimados.DBManager;
+package pe.pucp.progra3.mimados.dbmanager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -18,6 +18,27 @@ public class Servicio {
     private LocalDateTime fechaModificacion;
     private List<PuestoServicio> puestoServicios;
 
+    public Servicio(Integer id ,String nombre, String descripcion, BigDecimal precioReferencial, Integer duracionMinutos, Boolean activo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precioReferencial = precioReferencial;
+        this.duracionMinutos = duracionMinutos;
+        this.activo = activo;
+    }
+
+    public Servicio() {
+        this.puestoServicios = new ArrayList<>();
+        this.activo = true;
+    }
+
+    public Servicio(String nombre, BigDecimal precioReferencial, Integer duracionMinutos) {
+        this();
+        this.nombre = nombre;
+        this.precioReferencial = precioReferencial;
+        this.duracionMinutos = duracionMinutos;
+    }
+
     public Integer getId() {
         return id;
     }
