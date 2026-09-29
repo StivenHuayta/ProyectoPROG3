@@ -1,5 +1,7 @@
 package pe.pucp.progra3.mimados.DBManager;
 
+import pe.pucp.progra3.mimados.DBManager.DBManager;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 

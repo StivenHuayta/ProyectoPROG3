@@ -17,11 +17,6 @@ public class Usuario {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-
-    public Usuario() {
-    }
-
-
     public Usuario(String dni, String nombres,  String apellidos,  String email,  String accountName, String passwordHash,  String telefono) {
 
         if (dni == null || dni.length() != 8) {
