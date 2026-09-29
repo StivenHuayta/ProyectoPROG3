@@ -25,15 +25,16 @@ public class EmpleadoDAOimp implements EmpleadoDAO {
             while(rs.next()){
 
                 Empleado empleado = new Empleado(
+                       rs.getString("dni"),
+                       rs.getString("nombres"),
+                        rs.getString("apellidos"),
+                        rs.getString("email"),
+                        rs.getString("telefono"),
+
                         rs.getInt("sede_id"),
-                        rs.getInt("usuario_id"),
                         rs.getString("codigo_cmvp"),
                         rs.getBoolean("activo"),
-                        rs.getBoolean("es_admin"),
-                        rs.getString("usuario_creacion"),
-                        rs.getString("usuario_ultima_actualizacion"),
-                        rs.getObject("fecha_creacion" , LocalDateTime.class),
-                        rs.getObject("fecha_ultima_actualizacion" , LocalDateTime.class)
+                        rs.getBoolean("es_admin")
                 );
 
                 empleados.add(empleado);
@@ -47,7 +48,7 @@ public class EmpleadoDAOimp implements EmpleadoDAO {
     public void insertar_empleado(Empleado empleado) throws SQLException {
         Connection connection = TransactionContext.getConnection();
 
-        try(CallableStatement cs = connection.prepareCall("{CALL agregar_sede(?,?,?)}")){
+        try(CallableStatement cs = connection.prepareCall("{CALL insertar_empleado(?,?,?)}")){
 
 
             cs.setInt(1 , empleado.getSede().getId());

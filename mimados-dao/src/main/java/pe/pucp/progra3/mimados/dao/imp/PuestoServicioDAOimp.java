@@ -67,18 +67,17 @@ public class PuestoServicioDAOimp implements PuestoServicioDAO {
 
         Connection connection = TransactionContext.getConnection();
 
-        try(CallableStatement cs = connection.prepareCall("{CALL insertar_puesto_servicio(?,?,?,?)}")){
+        try(CallableStatement cs = connection.prepareCall("{CALL insertar_puesto_servicio(?,?)}")){
 
-            cs.registerOutParameter(4 , Types.INTEGER);
 
             cs.setInt(1 , ps.getServicio().getId());
             cs.setInt(2, ps.getPuesto().getId());
-            cs.setBoolean(3, ps.getActivo());
 
             cs.execute();
 
-            int id_generado = cs.getInt(4);
-            ps.setId(id_generado);
+
+//            int id_generado = cs.getInt(4);
+//            ps.setId(id_generado);
         }
 
     }

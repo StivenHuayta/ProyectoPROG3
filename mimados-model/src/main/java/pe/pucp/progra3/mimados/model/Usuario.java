@@ -131,8 +131,11 @@ public class Usuario {
         this.passwordHash = nuevoPasswordHash;
     }
 
-
+    public void setDni(String dni) {this.dni = dni;}
     public void setId(int id) { this.id = id;}
+    public void setEmail(String email) {this.email = email;}
+
+    public void setTelefono(String telefono) {this.telefono = telefono;}
 
     public int getId() { return id; }
     public String getDni() { return dni; }

@@ -26,6 +26,24 @@ public class Sede {
         this.fechaCreacion = fechaCreacion;
     }
 
+    public Sede(int id, String nombre, String direccion, String telefono, boolean activo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.activo = activo;
+    }
+
+    public Sede(String nombre, String direccion, String telefono, boolean activo) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.activo = activo;
+    }
+
+
+
+
     public Sede() {
         this.activo = true;
     }

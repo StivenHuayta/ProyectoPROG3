@@ -11,6 +11,6 @@ public interface CitaServicioDAO {
     public List<CitaServicio> listar_servicios_por_cita(int idCita) throws SQLException;
     public void actualizar_cita_servicio(CitaServicio citaServicio) throws SQLException;
 
-    public void eliminar_cita_servicio(int cita_id , int sede_servicio_id) throws SQLException;
+    //public void eliminar_cita_servicio(int cita_id , int sede_servicio_id) throws SQLException;
 
 }

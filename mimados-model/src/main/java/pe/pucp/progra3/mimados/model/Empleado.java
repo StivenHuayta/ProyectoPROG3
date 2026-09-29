@@ -35,6 +35,25 @@ public class Empleado {
         this.fechaModificacion = fechaModificacion;
     }
 
+    public Empleado(String dni, String nombre, String apellido , String email , String telefono ,
+                    int sede_id , String codigoCmvp , boolean activo , Boolean esAdmin){
+
+        this.getUsuario().setDni(dni);
+        this.getUsuario().setNombres(nombre);
+        this.getUsuario().setApellidos(apellido);
+        this.getUsuario().setEmail(email);
+        this.getUsuario().setTelefono(telefono);
+
+        this.getSede().setId(sede_id);
+        this.codigoCmvp = codigoCmvp;
+        this.esAdmin = esAdmin;
+        this.activo = activo;
+
+
+    }
+
+
+
 
 
     public boolean esVeterinario(List<EmpleadoPuesto> Listapuestos) {
