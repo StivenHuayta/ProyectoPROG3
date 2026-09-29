@@ -1,14 +1,12 @@
 package pe.pucp.progra3.mimados.dao.imp;
 
 import pe.pucp.progra3.mimados.DBManager.DBManager;
+import pe.pucp.progra3.mimados.DBManager.TransactionContext;
 import pe.pucp.progra3.mimados.dao.PuestoServicioDAO;
 import pe.pucp.progra3.mimados.model.PuestoServicio;
 import pe.pucp.progra3.mimados.model.Sede;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +40,46 @@ public class PuestoServicioDAOimp implements PuestoServicioDAO {
             }
         }
         return servicios_de_puesto;
+
+    }
+
+    @Override
+    public void eliminar_puesto_servicio(int id_puesto_servicio) throws SQLException {
+
+        Connection connection = TransactionContext.getConnection();
+
+        try(CallableStatement cs = connection.prepareCall("{CALL eliminar_puesto_servicio(?)}")){
+
+            cs.setInt(1 , Types.INTEGER);
+
+            cs.execute();
+
+            int filasAfectadas = cs.executeUpdate();
+
+            if (filasAfectadas == 0) {
+                System.out.println("Advertencia: No se encontró el servicio-puesto con ID " + id_puesto_servicio);
+            }
+        }
+    }
+
+    @Override
+    public void insertar_puesto_servicio(PuestoServicio ps) throws SQLException {
+
+        Connection connection = TransactionContext.getConnection();
+
+        try(CallableStatement cs = connection.prepareCall("{CALL insertar_puesto_servicio(?,?,?,?)}")){
+
+            cs.registerOutParameter(4 , Types.INTEGER);
+
+            cs.setInt(1 , ps.getServicio().getId());
+            cs.setInt(2, ps.getPuesto().getId());
+            cs.setBoolean(3, ps.getActivo());
+
+            cs.execute();
+
+            int id_generado = cs.getInt(4);
+            ps.setId(id_generado);
+        }
 
     }
 }

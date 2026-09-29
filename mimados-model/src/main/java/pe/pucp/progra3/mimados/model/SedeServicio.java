@@ -12,6 +12,17 @@ public class SedeServicio {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public SedeServicio(Integer id, int id_servicio, int id_sede, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
+        this.id = id;
+        this.servicio.setId(id_servicio);
+        this.sede.setId(id_sede);
+        this.activo = activo;
+        this.usuarioCreacion = usuarioCreacion;
+        this.usuarioModificacion = usuarioModificacion;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
+    }
+
     public Integer getId() {
         return id;
     }

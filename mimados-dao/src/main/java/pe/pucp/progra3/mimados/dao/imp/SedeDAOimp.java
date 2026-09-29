@@ -50,8 +50,6 @@ public class SedeDAOimp implements SedeDAO {
             cs.setInt(1 , id_sede);
             ResultSet rs = cs.executeQuery();
 
-
-
                 Sede sede = new Sede(
                         rs.getInt("id"),
                         rs.getString("nombre"),
