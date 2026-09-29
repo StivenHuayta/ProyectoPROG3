@@ -15,21 +15,25 @@ public class HorarioLaboral {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-    public HorarioLaboral() {
-        this.activo = true;
-    }
+        HorarioLaboral(){}
 
-    public HorarioLaboral(Empleado empleado, DiaSemana diaSemana, LocalTime horaInicio, LocalTime horaFin) {
-        this();
-        this.empleado = empleado;
+
+    public HorarioLaboral(Integer id, Integer empleado_id, DiaSemana diaSemana, LocalTime horaInicio, LocalTime horaFin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
+        this.id = id;
+        this.getEmpleado().getUsuario().setId(empleado_id);
         this.diaSemana = diaSemana;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
+        this.activo = activo;
+        this.usuarioCreacion = usuarioCreacion;
+        this.usuarioModificacion = usuarioModificacion;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
     }
 
     public Integer getId() {
-        return id;
-    }
+            return id;
+        }
 
     public void setId(Integer id) {
         this.id = id;

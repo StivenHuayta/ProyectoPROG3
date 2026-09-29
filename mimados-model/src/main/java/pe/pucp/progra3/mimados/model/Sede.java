@@ -13,6 +13,19 @@ public class Sede {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+
+    public Sede(int id, String nombre, String direccion, String telefono, boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, LocalDateTime fechaCreacion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.activo = activo;
+        this.usuarioCreacion = usuarioCreacion;
+        this.usuarioModificacion = usuarioModificacion;
+        this.fechaModificacion = fechaModificacion;
+        this.fechaCreacion = fechaCreacion;
+    }
+
     public Sede() {
         this.activo = true;
     }
@@ -40,14 +53,6 @@ public class Sede {
         this.nombre = nombre;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
     public String getDireccion() {
         return direccion;
     }
@@ -62,6 +67,14 @@ public class Sede {
 
     public void setActivo(Boolean activo) {
         this.activo = activo;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getUsuarioCreacion() {

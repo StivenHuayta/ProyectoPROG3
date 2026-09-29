@@ -4,9 +4,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Empleado {
+
+
     private Usuario usuario;
     private Sede sede;
+
     private String codigoCmvp;
     private Boolean esAdmin;
     private Boolean activo;
@@ -17,18 +21,38 @@ public class Empleado {
     private List<EmpleadoPuesto> empleadoPuestos;
     private List<HorarioLaboral> horariosLaborales;
 
-    public Empleado() {
-        this.empleadoPuestos = new ArrayList<>();
-        this.horariosLaborales = new ArrayList<>();
-        this.activo = true;
-        this.esAdmin = false;
+    public Empleado() {}
+
+    public Empleado(int sede_id, int usuario_id, String codigoCmvp , Boolean esAdmin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
+        this.getSede().setId(sede_id);
+        this.getUsuario().setId(usuario_id);
+        this.codigoCmvp = codigoCmvp;
+        this.esAdmin = esAdmin;
+        this.activo = activo;
+        this.usuarioCreacion = usuarioCreacion;
+        this.usuarioModificacion = usuarioModificacion;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
     }
 
-    public Empleado(Usuario usuario, Sede sede) {
-        this();
-        this.usuario = usuario;
-        this.sede = sede;
+
+
+    public boolean esVeterinario(List<EmpleadoPuesto> Listapuestos) {
+        for( EmpleadoPuesto p : Listapuestos ){
+        }
+
+        return true;
+        //
     }
+
+    public void darDeBaja() {
+        this.activo = false;
+    }
+
+    public void reincorporar() {
+        this.activo = true;
+    }
+
 
     public Usuario getUsuario() {
         return usuario;

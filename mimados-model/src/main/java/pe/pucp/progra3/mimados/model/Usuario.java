@@ -17,119 +17,132 @@ public class Usuario {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
-    public Usuario() {
-    }
+    public Usuario(String dni, String nombres,  String apellidos,  String email,  String accountName, String passwordHash,  String telefono) {
 
-    public Usuario(String dni, String nombres, String apellidos, String email, String passwordHash, String telefono) {
+        if (dni == null || dni.length() != 8) {
+            throw new IllegalArgumentException(
+                    "El DNI debe tener 8 caracteres."
+            );
+        }
+
+        if (nombres == null || nombres.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Los nombres son obligatorios."
+            );
+        }
+
+        if (apellidos == null || apellidos.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Los apellidos son obligatorios."
+            );
+        }
+
+        if (email == null || !email.contains("@")) {
+            throw new IllegalArgumentException(
+                    "El formato del correo es inválido."
+            );
+        }
+
+        if (accountName == null || accountName.isBlank()) {
+            throw new IllegalArgumentException(
+                    "El nombre de usuario es obligatorio."
+            );
+        }
+
+        if (passwordHash == null || passwordHash.isBlank()) {
+            throw new IllegalArgumentException(
+                    "La contraseña es obligatoria."
+            );
+        }
+
         this.dni = dni;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.email = email;
         this.passwordHash = passwordHash;
         this.telefono = telefono;
+
+
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
+    public Usuario(int id, String dni, String nombres, String apellidos, String email,
+                   String accountName, String passwordHash, String telefono, boolean estado) {
+
+        this(dni, nombres, apellidos, email, accountName, passwordHash, telefono);
         this.id = id;
+
     }
 
-    public Cliente getCliente() {
-        return cliente;
+
+    public String getNombreCompleto() {
+        return nombres + " " + apellidos;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void actualizarContacto(String nuevoTelefono,
+                                   String nuevoEmail) {
+
+        if (nuevoEmail != null) {
+            if (!nuevoEmail.contains("@")) {
+                throw new IllegalArgumentException(
+                        "El formato del correo es inválido."
+                );
+            }
+
+            this.email = nuevoEmail;
+        }
+
+        if (nuevoTelefono != null && !nuevoTelefono.isBlank()) {
+            this.telefono = nuevoTelefono;
+        }
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
+
+    public void cambiarPassword(String nuevoPasswordHash) {
+        if (nuevoPasswordHash == null ||
+                nuevoPasswordHash.isBlank()) {
+
+            throw new IllegalArgumentException(
+                    "La contraseña no puede estar vacía."
+            );
+        }
+
+        this.passwordHash = nuevoPasswordHash;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
 
-    public String getDni() {
-        return dni;
-    }
+    public void setId(int id) { this.id = id;}
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
+    public int getId() { return id; }
+    public String getDni() { return dni; }
+    public String getNombres() { return nombres; }
+    public String getApellidos() { return apellidos; }
+    public String getEmail() { return email; }
+    public String getPasswordHash() { return passwordHash; }
+    public String getTelefono() { return telefono; }
 
-    public String getNombres() {
-        return nombres;
-    }
+
 
     public void setNombres(String nombres) {
+
+        if (nombres == null || nombres.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Los nombres son obligatorios."
+            );
+        }
+
         this.nombres = nombres;
     }
 
-    public String getApellidos() {
-        return apellidos;
-    }
 
     public void setApellidos(String apellidos) {
+
+        if (apellidos == null || apellidos.isBlank()) {
+            throw new IllegalArgumentException(
+                    "Los apellidos son obligatorios."
+            );
+        }
+
         this.apellidos = apellidos;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getUsuarioCreacion() {
-        return usuarioCreacion;
-    }
-
-    public void setUsuarioCreacion(String usuarioCreacion) {
-        this.usuarioCreacion = usuarioCreacion;
-    }
-
-    public String getUsuarioModificacion() {
-        return usuarioModificacion;
-    }
-
-    public void setUsuarioModificacion(String usuarioModificacion) {
-        this.usuarioModificacion = usuarioModificacion;
-    }
-
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public LocalDateTime getFechaModificacion() {
-        return fechaModificacion;
-    }
-
-    public void setFechaModificacion(LocalDateTime fechaModificacion) {
-        this.fechaModificacion = fechaModificacion;
     }
 }

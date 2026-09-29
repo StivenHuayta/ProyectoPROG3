@@ -19,19 +19,6 @@ public class Cita {
     private LocalDateTime fechaModificacion;
     private List<CitaServicio> citasServicio;
 
-    public Cita() {
-        this.citasServicio = new ArrayList<>();
-        this.estado = Estado.PROGRAMADA;
-    }
-
-    public Cita(Empleado empleado, Mascota mascota, LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin) {
-        this();
-        this.empleado = empleado;
-        this.mascota = mascota;
-        this.fechaHoraInicio = fechaHoraInicio;
-        this.fechaHoraFin = fechaHoraFin;
-    }
-
     public Integer getId() {
         return id;
     }
