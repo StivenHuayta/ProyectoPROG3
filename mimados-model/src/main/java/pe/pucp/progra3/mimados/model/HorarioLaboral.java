@@ -4,17 +4,16 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class HorarioLaboral {
-        private Integer id;
-
-        private Empleado empleado;
-        private DiaSemana diaSemana;
-        private LocalTime horaInicio;
-        private LocalTime horaFin;
-        private Boolean activo;
-        private String usuarioCreacion;
-        private String usuarioModificacion;
-        private LocalDateTime fechaCreacion;
-        private LocalDateTime fechaModificacion;
+    private Integer id;
+    private Empleado empleado;
+    private DiaSemana diaSemana;
+    private LocalTime horaInicio;
+    private LocalTime horaFin;
+    private Boolean activo;
+    private String usuarioCreacion;
+    private String usuarioModificacion;
+    private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaModificacion;
 
         HorarioLaboral(){}
 
@@ -36,79 +35,79 @@ public class HorarioLaboral {
             return id;
         }
 
-        public void setId(Integer id) {
-            this.id = id;
-        }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-        public Empleado getEmpleado() {
-            return empleado;
-        }
+    public Empleado getEmpleado() {
+        return empleado;
+    }
 
-        public void setEmpleado(Empleado empleado) {
-            this.empleado = empleado;
-        }
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
 
-        public DiaSemana getDiaSemana() {
-            return diaSemana;
-        }
+    public DiaSemana getDiaSemana() {
+        return diaSemana;
+    }
 
-        public void setDiaSemana(DiaSemana diaSemana) {
-            this.diaSemana = diaSemana;
-        }
+    public void setDiaSemana(DiaSemana diaSemana) {
+        this.diaSemana = diaSemana;
+    }
 
-        public LocalTime getHoraFin() {
-            return horaFin;
-        }
+    public LocalTime getHoraFin() {
+        return horaFin;
+    }
 
-        public void setHoraFin(LocalTime horaFin) {
-            this.horaFin = horaFin;
-        }
+    public void setHoraFin(LocalTime horaFin) {
+        this.horaFin = horaFin;
+    }
 
-        public LocalTime getHoraInicio() {
-            return horaInicio;
-        }
+    public LocalTime getHoraInicio() {
+        return horaInicio;
+    }
 
-        public void setHoraInicio(LocalTime horaInicio) {
-            this.horaInicio = horaInicio;
-        }
+    public void setHoraInicio(LocalTime horaInicio) {
+        this.horaInicio = horaInicio;
+    }
 
-        public Boolean getActivo() {
-            return activo;
-        }
+    public Boolean getActivo() {
+        return activo;
+    }
 
-        public void setActivo(Boolean activo) {
-            this.activo = activo;
-        }
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
+    }
 
-        public String getUsuarioCreacion() {
-            return usuarioCreacion;
-        }
+    public String getUsuarioCreacion() {
+        return usuarioCreacion;
+    }
 
-        public void setUsuarioCreacion(String usuarioCreacion) {
-            this.usuarioCreacion = usuarioCreacion;
-        }
+    public void setUsuarioCreacion(String usuarioCreacion) {
+        this.usuarioCreacion = usuarioCreacion;
+    }
 
-        public String getUsuarioModificacion() {
-            return usuarioModificacion;
-        }
+    public String getUsuarioModificacion() {
+        return usuarioModificacion;
+    }
 
-        public void setUsuarioModificacion(String usuarioModificacion) {
-            this.usuarioModificacion = usuarioModificacion;
-        }
+    public void setUsuarioModificacion(String usuarioModificacion) {
+        this.usuarioModificacion = usuarioModificacion;
+    }
 
-        public LocalDateTime getFechaCreacion() {
-            return fechaCreacion;
-        }
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
 
-        public void setFechaCreacion(LocalDateTime fechaCreacion) {
-            this.fechaCreacion = fechaCreacion;
-        }
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
 
-        public LocalDateTime getFechaModificacion() {
-            return fechaModificacion;
-        }
+    public LocalDateTime getFechaModificacion() {
+        return fechaModificacion;
+    }
 
-        public void setFechaModificacion(LocalDateTime fechaModificacion) {
-            this.fechaModificacion = fechaModificacion;
-        }
+    public void setFechaModificacion(LocalDateTime fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
+    }
 }

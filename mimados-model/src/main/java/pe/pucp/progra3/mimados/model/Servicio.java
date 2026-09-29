@@ -2,6 +2,7 @@ package pe.pucp.progra3.mimados.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Servicio {
@@ -24,6 +25,18 @@ public class Servicio {
         this.precioReferencial = precioReferencial;
         this.duracionMinutos = duracionMinutos;
         this.activo = activo;
+    }
+
+    public Servicio() {
+        this.puestoServicios = new ArrayList<>();
+        this.activo = true;
+    }
+
+    public Servicio(String nombre, BigDecimal precioReferencial, Integer duracionMinutos) {
+        this();
+        this.nombre = nombre;
+        this.precioReferencial = precioReferencial;
+        this.duracionMinutos = duracionMinutos;
     }
 
     public Integer getId() {

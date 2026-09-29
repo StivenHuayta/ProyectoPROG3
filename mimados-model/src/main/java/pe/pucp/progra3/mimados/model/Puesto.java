@@ -1,6 +1,7 @@
 package pe.pucp.progra3.mimados.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Puesto {
@@ -12,6 +13,15 @@ public class Puesto {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
     private List<PuestoServicio> puestoServicios;
+
+    public Puesto() {
+        this.puestoServicios = new ArrayList<>();
+    }
+
+    public Puesto(String nombre) {
+        this();
+        this.nombre = nombre;
+    }
 
     public Integer getId() {
         return id;

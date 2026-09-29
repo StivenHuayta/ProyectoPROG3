@@ -12,6 +12,16 @@ public class EmpleadoPuesto {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public EmpleadoPuesto() {
+        this.activo = true;
+    }
+
+    public EmpleadoPuesto(Puesto puesto, Empleado empleado, Boolean activo) {
+        this.puesto = puesto;
+        this.empleado = empleado;
+        this.activo = activo;
+    }
+
     public Integer getId() {
         return id;
     }

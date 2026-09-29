@@ -2,6 +2,7 @@ package pe.pucp.progra3.mimados.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Mascota {
@@ -19,6 +20,19 @@ public class Mascota {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
     private List<Cita> citas;
+
+    public Mascota() {
+        this.citas = new ArrayList<>();
+        this.activo = true;
+    }
+
+    public Mascota(Cliente cliente, String nombre, Especie especie, Sexo sexo) {
+        this();
+        this.cliente = cliente;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.sexo = sexo;
+    }
 
     public Integer getId() {
         return id;

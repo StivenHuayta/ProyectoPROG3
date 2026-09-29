@@ -14,9 +14,6 @@ public class Sede {
     private LocalDateTime fechaModificacion;
 
 
-    public Sede() {
-    }
-
     public Sede(int id, String nombre, String direccion, String telefono, boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaModificacion, LocalDateTime fechaCreacion) {
         this.id = id;
         this.nombre = nombre;
@@ -27,6 +24,17 @@ public class Sede {
         this.usuarioModificacion = usuarioModificacion;
         this.fechaModificacion = fechaModificacion;
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public Sede() {
+        this.activo = true;
+    }
+
+    public Sede(String nombre, String direccion, String telefono) {
+        this();
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
     public Integer getId() {
