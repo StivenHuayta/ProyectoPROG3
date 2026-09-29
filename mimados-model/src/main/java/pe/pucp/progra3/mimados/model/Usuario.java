@@ -17,6 +17,27 @@ public class Usuario {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public Usuario() {
+    }
+
+    public Usuario(Integer id, String dni, String nombres, String apellidos, String email, String telefono) {
+        this.id = id;
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.telefono = telefono;
+    }
+
+    public Usuario(String dni, String nombres, String apellidos, String email, String passwordHash, String telefono) {
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.telefono = telefono;
+    }
+
     public Usuario(String dni, String nombres,  String apellidos,  String email,  String accountName, String passwordHash,  String telefono) {
 
         if (dni == null || dni.length() != 8) {
@@ -110,8 +131,11 @@ public class Usuario {
         this.passwordHash = nuevoPasswordHash;
     }
 
-
+    public void setDni(String dni) {this.dni = dni;}
     public void setId(int id) { this.id = id;}
+    public void setEmail(String email) {this.email = email;}
+
+    public void setTelefono(String telefono) {this.telefono = telefono;}
 
     public int getId() { return id; }
     public String getDni() { return dni; }

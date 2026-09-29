@@ -15,6 +15,19 @@ public class Cliente {
     private LocalDateTime fechaModificacion;
     private List<Mascota> mascotas;
 
+    public Cliente() {
+        this.mascotas = new ArrayList<>();
+        this.activo = true;
+    }
+
+    public Cliente(Usuario usuario, String direccion, String telefonoEmergencia, Boolean activo) {
+        this();
+        this.usuario = usuario;
+        this.direccion = direccion;
+        this.telefonoEmergencia = telefonoEmergencia;
+        this.activo = activo;
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }

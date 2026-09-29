@@ -7,6 +7,7 @@ import pe.pucp.progra3.mimados.model.DiaSemana;
 import pe.pucp.progra3.mimados.model.HorarioLaboral;
 import pe.pucp.progra3.mimados.model.Servicio;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -42,7 +43,7 @@ public class ServicioDAOimp implements ServicioDAO {
     public void insertar_servicio(Servicio servicio) throws SQLException {
         Connection connection = TransactionContext.getConnection();
 
-        try(CallableStatement cs = connection.prepareCall("{CALL agregar_sede(?,?,?,?, ?)}")){
+        try(CallableStatement cs = connection.prepareCall("{CALL insertar_servicio(?,?,?,?, ?)}")){
 
             cs.registerOutParameter(5 , Types.INTEGER);
 
@@ -75,5 +76,24 @@ public class ServicioDAOimp implements ServicioDAO {
         }
 
 
+    }
+
+
+    @Override
+    public void actualizar_servicio_precio(int id_servicio, BigDecimal precio) throws SQLException {
+        Connection connection = TransactionContext.getConnection();
+
+        try(CallableStatement cs = connection.prepareCall("{CALL actualizar_servicio_precio(?,?)}")) {
+
+            cs.setInt(1 , id_servicio);
+            cs.setBigDecimal(2,precio);
+
+            int filasAfectadas = cs.executeUpdate();
+
+            if (filasAfectadas == 0) {
+                System.out.println("Advertencia: No se encontró la sede con ID " + id_servicio);
+            }
+
+        }
     }
 }

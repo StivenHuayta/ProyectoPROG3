@@ -27,13 +27,7 @@ public class SedeDAOimp implements SedeDAO {
                         rs.getString("nombre"),
                         rs.getString("direccion"),
                         rs.getString("telefono"),
-                        rs.getBoolean("activo"),
-                        rs.getString("usuario_creacion"),
-                        rs.getString("usuario_ultima_actualizacion"),
-                        rs.getObject("fecha_ultima_actualizacion" , LocalDateTime.class),
-                        rs.getObject("fecha_creacion" , LocalDateTime.class)
-
-
+                        rs.getBoolean("activo")
                 );
                 sedes.add(sede);
             }
@@ -50,19 +44,11 @@ public class SedeDAOimp implements SedeDAO {
             cs.setInt(1 , id_sede);
             ResultSet rs = cs.executeQuery();
 
-
-
                 Sede sede = new Sede(
-                        rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getString("direccion"),
                         rs.getString("telefono"),
-                        rs.getBoolean("activo"),
-                        rs.getString("usuario_creacion"),
-                        rs.getString("usuario_ultima_actualizacion"),
-                        rs.getObject("fecha_creacion" , LocalDateTime.class),
-                        rs.getObject("fecha_ultima_actualizacion" , LocalDateTime.class)
-
+                        rs.getBoolean("activo")
                 );
             return sede;
         }
@@ -74,7 +60,7 @@ public class SedeDAOimp implements SedeDAO {
 
         Connection connection = TransactionContext.getConnection();
 
-        try(CallableStatement cs = connection.prepareCall("{CALL modificar_direccion(?,?)}")) {
+        try(CallableStatement cs = connection.prepareCall("{CALL actualizar_direccion(?,?)}")) {
 
             cs.setInt(1 , id_sede);
             cs.setString(2,dir);
@@ -94,7 +80,7 @@ public class SedeDAOimp implements SedeDAO {
     public void agregar_sede(Sede sede) throws SQLException {
         Connection connection = TransactionContext.getConnection();
 
-        try(CallableStatement cs = connection.prepareCall("{CALL agregar_sede(?,?,?,?)}")){
+        try(CallableStatement cs = connection.prepareCall("{CALL insertar_sede(?,?,?,?)}")){
 
             cs.registerOutParameter(4 , Types.INTEGER);
 

@@ -20,6 +20,22 @@ public class Atencion {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public Atencion() {}
+
+    public Atencion(Integer id, Cita cita, Empleado empleado, LocalDateTime fechaHoraRegistro, Double pesoActual, Double temperatura, String sintomas, String diagnostico, String tratamientoRecetado, String observaciones, BigDecimal montoTotal) {
+        this.id = id;
+        this.cita = cita;
+        this.empleado = empleado;
+        this.fechaHoraRegistro = fechaHoraRegistro;
+        this.pesoActual = pesoActual;
+        this.temperatura = temperatura;
+        this.sintomas = sintomas;
+        this.diagnostico = diagnostico;
+        this.tratamientoRecetado = tratamientoRecetado;
+        this.observaciones = observaciones;
+        this.montoTotal = montoTotal;
+    }
+
     public Integer getId() {
         return id;
     }

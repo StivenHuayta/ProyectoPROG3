@@ -13,6 +13,27 @@ public class CitaServicio {
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
 
+    public CitaServicio() {}
+
+
+    public CitaServicio(int id_cita, int  id_sedeServicio, BigDecimal precioAplicado, String notas, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
+        this.cita.setId(id_cita);
+        this.sedeServicio.setId(id_sedeServicio);
+        this.precioAplicado = precioAplicado;
+        this.notas = notas;
+        this.usuarioCreacion = usuarioCreacion;
+        this.usuarioModificacion = usuarioModificacion;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
+    }
+
+    public CitaServicio(Cita cita, SedeServicio sedeServicio, BigDecimal precioAplicado, String notas) {
+        this.cita = cita;
+        this.sedeServicio = sedeServicio;
+        this.precioAplicado = precioAplicado;
+        this.notas = notas;
+    }
+
     public Cita getCita() {
         return cita;
     }

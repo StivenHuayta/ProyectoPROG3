@@ -8,8 +8,10 @@ import java.util.List;
 public interface PuestoServicioDAO {
 
 
-    public List<PuestoServicio> listar_servicios_puesto(int id_sede) throws SQLException;
+    public List<PuestoServicio> listar_servicios_puesto(int id_puesto) throws SQLException;
 
+    public void insertar_puesto_servicio(PuestoServicio ps) throws SQLException;
+    public void eliminar_puesto_servicio(int id_puesto_servicio) throws SQLException;
 
 
 }
