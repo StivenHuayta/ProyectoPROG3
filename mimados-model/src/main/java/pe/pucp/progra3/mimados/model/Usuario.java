@@ -116,6 +116,8 @@ public class Usuario {
     }
 
 
+    public void setId(int id) { this.id = id;}
+
     public int getId() { return id; }
     public String getDni() { return dni; }
     public String getNombres() { return nombres; }

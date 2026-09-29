@@ -8,9 +8,6 @@ import java.util.List;
 public class Empleado {
 
 
-    private int sede_id;
-    private int usuario_id;
-
     private Usuario usuario;
     private Sede sede;
 
@@ -27,8 +24,8 @@ public class Empleado {
     public Empleado() {}
 
     public Empleado(int sede_id, int usuario_id, String codigoCmvp , Boolean esAdmin, Boolean activo, String usuarioCreacion, String usuarioModificacion, LocalDateTime fechaCreacion, LocalDateTime fechaModificacion) {
-        this.sede_id = sede_id;
-        this.usuario_id = usuario_id;
+        this.getSede().setId(sede_id);
+        this.getUsuario().setId(usuario_id);
         this.codigoCmvp = codigoCmvp;
         this.esAdmin = esAdmin;
         this.activo = activo;
