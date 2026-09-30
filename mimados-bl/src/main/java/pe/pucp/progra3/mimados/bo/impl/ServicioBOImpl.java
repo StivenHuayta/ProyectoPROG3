@@ -93,6 +93,15 @@ public class ServicioBOImpl implements ServicioBO {
         return servicioDAO.listar_servicios();
     }
 
+    @Override
+    public Servicio obtenerPorId(int id)
+            throws SQLException, NegocioException {
+
+        validarId(id);
+
+        return servicioDAO.mostrar_servicio(id);
+    }
+
     private void validarServicio(Servicio servicio)
             throws NegocioException {
 

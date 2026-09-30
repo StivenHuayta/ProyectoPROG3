@@ -19,4 +19,7 @@ public interface ServicioBO {
 
     List<Servicio> listarTodos()
             throws SQLException;
+
+    Servicio obtenerPorId(int id)
+            throws SQLException, NegocioException;
 }

@@ -63,6 +63,15 @@ public class EmpleadoBOImpl implements EmpleadoBO {
         return empleadoDAO.listar_empleados();
     }
 
+    @Override
+    public Empleado obtenerPorId(int id)
+            throws SQLException, NegocioException {
+
+        validarId(id);
+
+        return empleadoDAO.mostrar_empleado(id);
+    }
+
     private void validarEmpleado(Empleado empleado)
             throws NegocioException {
 

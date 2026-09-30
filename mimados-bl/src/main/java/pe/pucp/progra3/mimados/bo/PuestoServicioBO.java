@@ -16,4 +16,6 @@ public interface PuestoServicioBO {
 
     List<PuestoServicio> listarPorPuesto(int idPuesto)
             throws SQLException, NegocioException;
+    PuestoServicio obtenerPorId(int id)
+            throws SQLException, NegocioException;
 }

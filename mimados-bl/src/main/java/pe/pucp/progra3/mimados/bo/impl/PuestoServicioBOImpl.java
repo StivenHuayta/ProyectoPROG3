@@ -64,6 +64,14 @@ public class PuestoServicioBOImpl implements PuestoServicioBO {
 
         return puestoServicioDAO.listar_servicios_puesto(idPuesto);
     }
+    @Override
+    public PuestoServicio obtenerPorId(int id)
+            throws SQLException, NegocioException {
+
+        validarId(id);
+
+        return puestoServicioDAO.mostrar_puesto_servicio(id);
+    }
 
     private void validarPuestoServicio(PuestoServicio puestoServicio)
             throws NegocioException {

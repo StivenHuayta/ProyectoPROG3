@@ -16,4 +16,7 @@ public interface EmpleadoBO {
 
     List<Empleado> listarTodos()
             throws SQLException;
+
+    Empleado obtenerPorId(int id)
+            throws SQLException, NegocioException;
 }
