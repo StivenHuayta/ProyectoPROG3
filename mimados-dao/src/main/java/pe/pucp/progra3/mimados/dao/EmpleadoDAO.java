@@ -13,7 +13,10 @@ public interface EmpleadoDAO  {
     public void eliminar_empleado(int id_empleado) throws SQLException;
 
     public Empleado mostrar_empleado(int id_empleado) throws SQLException;
-    //public void actualizar_empleado
+    public void actualizar_empleado(Empleado empleado) throws SQLException;
+
+
+
 
 
 }
