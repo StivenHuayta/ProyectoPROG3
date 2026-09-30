@@ -25,6 +25,7 @@ public class EmpleadoDAOimp implements EmpleadoDAO {
             while(rs.next()){
 
                 Empleado empleado = new Empleado(
+                        rs.getInt("usuario_id"),
                        rs.getString("dni"),
                        rs.getString("nombres"),
                         rs.getString("apellidos"),
