@@ -104,4 +104,29 @@ public class EmpleadoDAOimp implements EmpleadoDAO {
 
 
     }
+
+    @Override
+    public void actualizar_empleado(Empleado empleado) throws SQLException {
+
+        Connection connection = TransactionContext.getConnection();
+
+        try(CallableStatement cs = connection.prepareCall("{CALL actualizar_empleado(?,?,?,?,?)}")) {
+
+            cs.setInt(1 , empleado.getUsuario().getId());
+            cs.setInt(2,empleado.getSede().getId());
+            cs.setString(3, empleado.getCodigoCmvp());
+            cs.setBoolean(4, empleado.getActivo());
+            cs.setBoolean(5 , empleado.getEsAdmin());
+
+            int filasAfectadas = cs.executeUpdate();
+
+            if (filasAfectadas == 0) {
+                System.out.println("Advertencia: No se encontró el empleado con ID " + empleado.getUsuario().getId());
+            }
+
+        }
+
+
+
+    }
 }
