@@ -189,13 +189,88 @@ public class Main {
         }
         emp1.setCodigoCmvp("nuCMVP");
 //        try{
-//            empleadoBO.
+//            // falta actualizar en elpleado BO
+////            empleadoBO.
 //        }
-//        Mascota mas1= new Mascota(9,cli1, "chimenea",Especie.CANINO,"raza",Sexo.MACHO, LocalDate.of(2000, 5, 15),10.5,true);
+
+        //eliminar empleado
+        try{
+            empleadoBO.eliminar(emp1.getUsuario().getId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (NegocioException e) {
+            throw new RuntimeException(e);
+        }
+
+        //mostrar empleado por id
+        Empleado empleadoPrueba;
+        try{
+            empleadoPrueba=empleadoBO.obtenerPorId(emp1.getUsuario().getId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (NegocioException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.printf("   %d -  %s -  %s - "+empleadoPrueba.getEsAdmin()+" - "+empleadoPrueba.getActivo()+"%n",
+                empleadoPrueba.getUsuario().getId(),empleadoPrueba.getUsuario().getApellidos(),empleadoPrueba.getCodigoCmvp());
+
+        Mascota mas1= new Mascota(9,cli1, "chimenea",Especie.CANINO,"raza",Sexo.MACHO,
+                                    LocalDate.of(2000, 5, 15),10.5,true);
+        // insertar mascota
+        try{
+            mascotaBO.insertar(mas1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (NegocioException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        //listar mascotas
+        List<Mascota>mascotas;
+        try{
+            mascotas=mascotaBO.listarTodos();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        for (Mascota mas:mascotas){
+            System.out.printf("   %d -  %s - %s - "+mas.getActivo()+"%n",
+                    mas.getId(),mas.getNombre(), mas.getEspecie());
+        }
+
+
+        //modificar mascota
+        mas1.setNombre("nuevoNombre");
+        try{
+            mascotaBO.modificar(mas1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (NegocioException e) {
+            throw new RuntimeException(e);
+        }
 
 
 
+        // matar mascota
+        try{
+            mascotaBO.eliminar(mas1.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (NegocioException e) {
+            throw new RuntimeException(e);
+        }
 
+        // mostar mascota por id del dueno
+        Mascota mascotaPrueba;
+        try{
+            mascotaPrueba=mascotaBO.obtenerPorId(mas1.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (NegocioException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.printf("   %d -  %s - %s  - "+mascotaPrueba.getActivo()+"%n",
+                mascotaPrueba.getId(),mascotaPrueba.getNombre(), mascotaPrueba.getEspecie());
 
     }
 }
