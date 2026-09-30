@@ -77,4 +77,31 @@ public class EmpleadoDAOimp implements EmpleadoDAO {
         }
 
     }
+
+    @Override
+    public Empleado mostrar_empleado(int id_empleado) throws SQLException {
+
+        try(Connection connection = DBManager.getInstance().getConnection();
+            CallableStatement cs = connection.prepareCall(" {CALL mostrar_empleado( ? )}");){
+
+            cs.setInt(1 , id_empleado);
+            ResultSet rs = cs.executeQuery();
+
+            Empleado emp = new Empleado(
+                    rs.getString("dni"),
+                    rs.getString("nombres"),
+                    rs.getString("apellidos"),
+                    rs.getString("email"),
+                    rs.getString("telefono"),
+
+                    rs.getInt("sede_id"),
+                    rs.getString("codigo_cmvp"),
+                    rs.getBoolean("activo"),
+                    rs.getBoolean("es_admin")
+            );
+            return emp;
+        }
+
+
+    }
 }
